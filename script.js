@@ -1,24 +1,62 @@
-const menuToggle = document.getElementById("menu-toggle");
+```javascript
+document.addEventListener("DOMContentLoaded", function () {
 
-const navMenu = document.getElementById("nav-menu");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
 
-
-menuToggle.addEventListener("click", function () {
-
-    navMenu.classList.toggle("active");
-
-});
+    const navLinks = document.querySelectorAll("#nav-menu a");
 
 
-const navLinks = document.querySelectorAll("nav a");
+    // MOBILE MENU
+
+    menuToggle.addEventListener("click", function () {
+
+        navMenu.classList.toggle("active");
 
 
-navLinks.forEach(function (link) {
+        // Change menu icon
 
-    link.addEventListener("click", function () {
+        if (navMenu.classList.contains("active")) {
 
-        navMenu.classList.remove("active");
+            menuToggle.textContent = "✕";
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
+        } else {
+
+            menuToggle.textContent = "☰";
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        }
+
+    });
+
+
+    // CLOSE MENU AFTER CLICKING A LINK
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("active");
+
+            menuToggle.textContent = "☰";
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        });
 
     });
 
 });
+```
