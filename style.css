@@ -47,5 +47,8 @@ html {
     .hero-buttons {
         flex-direction: column;
     }
+    section {
+    scroll-margin-top: 90px;
+}
 
 }
