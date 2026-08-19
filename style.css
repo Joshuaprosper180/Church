@@ -706,40 +706,49 @@ nav a:hover {
 }
 
 
+#sermons .section-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
 .sermon-box {
+
+    width: 100%;
 
     margin-top: 50px;
 
+    padding: 35px 40px;
+
     background: white;
 
-    padding: 35px;
-
-    border-radius: 15px;
+    border-radius: 18px;
 
     display: flex;
 
     align-items: center;
-
-    justify-content: space-between;
 
     gap: 30px;
 
     text-align: left;
 
     box-shadow:
-        0 10px 30px
-        rgba(0,0,0,0.08);
+        0 12px 35px
+        rgba(0, 0, 0, 0.08);
 
 }
 
 
 .sermon-icon {
 
-    width: 65px;
+    width: 70px;
 
-    height: 65px;
+    height: 70px;
 
-    min-width: 65px;
+    min-width: 70px;
 
     display: flex;
 
@@ -753,7 +762,7 @@ nav a:hover {
 
     border-radius: 50%;
 
-    font-size: 25px;
+    font-size: 26px;
 
 }
 
@@ -765,20 +774,31 @@ nav a:hover {
 }
 
 
-.sermon-box h3 {
-
-    font-size: 23px;
+.sermon-content h3 {
 
     color: #17233b;
+
+    font-size: 25px;
 
     margin-bottom: 8px;
 
 }
 
 
-.sermon-box p {
+.sermon-content p {
 
     color: #666;
+
+    margin: 0;
+
+}
+
+
+.sermon-button {
+
+    white-space: nowrap;
+
+    margin-top: 0;
 
 }
 
@@ -804,25 +824,44 @@ nav a:hover {
 }
 
 
-.platform-container {
+.watch-platforms .section-container {
 
     max-width: 1200px;
 
-    margin: 50px auto 0;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 30px;
+    margin: 0 auto;
 
 }
 
 
-/* PLATFORM CARD */
+.platform-container {
+
+    width: 100%;
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================
+   PLATFORM CARD
+========================= */
 
 .platform-card {
+
+    min-width: 0;
+
+    min-height: 360px;
+
+    padding: 45px 32px 35px;
 
     display: flex;
 
@@ -830,21 +869,21 @@ nav a:hover {
 
     align-items: center;
 
+    text-align: center;
+
     background: white;
-
-    padding: 45px 30px;
-
-    border-radius: 18px;
-
-    text-decoration: none;
 
     color: #17233b;
 
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,0.08);
+    text-decoration: none;
+
+    border-radius: 20px;
 
     border: 2px solid transparent;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
 
     transition:
         transform 0.3s ease,
@@ -856,14 +895,53 @@ nav a:hover {
 
 .platform-card:hover {
 
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 
     box-shadow:
         0 20px 45px
-        rgba(0,0,0,0.15);
+        rgba(0, 0, 0, 0.14);
 
 }
 
+
+
+/* =========================
+   PLATFORM ICON
+========================= */
+
+.platform-icon {
+
+    width: 78px;
+
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+/* =========================
+   CARD TEXT
+========================= */
 
 .platform-card h3 {
 
@@ -882,34 +960,20 @@ nav a:hover {
 
     line-height: 1.7;
 
-    margin-bottom: 25px;
+    margin: 0;
+
+    font-size: 15px;
 
 }
 
 
 .platform-link {
 
+    width: 100%;
+
     margin-top: auto;
 
-    font-weight: bold;
-
-    font-size: 15px;
-
-    color: #9c6b16;
-
-}
-
-
-
-/* =========================
-   PLATFORM ICONS
-========================= */
-
-.platform-icon {
-
-    width: 75px;
-
-    height: 75px;
+    padding-top: 25px;
 
     display: flex;
 
@@ -917,24 +981,46 @@ nav a:hover {
 
     justify-content: center;
 
-    margin-bottom: 25px;
-
-    border-radius: 50%;
-
-    color: white;
-
-    font-size: 32px;
+    gap: 10px;
 
     font-weight: bold;
+
+    font-size: 15px;
 
 }
 
 
-/* YOUTUBE */
+.arrow {
+
+    font-size: 22px;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.platform-card:hover .arrow {
+
+    transform: translateX(5px);
+
+}
+
+
+
+/* =========================
+   YOUTUBE
+========================= */
 
 .youtube-card .platform-icon {
 
     background: #ff0000;
+
+}
+
+
+.youtube-card .platform-link {
+
+    color: #e00000;
 
 }
 
@@ -947,15 +1033,31 @@ nav a:hover {
 
 
 
-/* FACEBOOK */
+/* =========================
+   FACEBOOK
+========================= */
 
 .facebook-card .platform-icon {
 
     background: #1877f2;
 
+}
+
+
+.facebook-symbol {
+
     font-family: Arial, sans-serif;
 
-    font-size: 45px;
+    font-size: 48px;
+
+    font-weight: bold;
+
+}
+
+
+.facebook-card .platform-link {
+
+    color: #1877f2;
 
 }
 
@@ -968,13 +1070,22 @@ nav a:hover {
 
 
 
-/* TIKTOK */
+/* =========================
+   TIKTOK
+========================= */
 
 .tiktok-card .platform-icon {
 
     background: #17233b;
 
-    font-size: 40px;
+    font-size: 42px;
+
+}
+
+
+.tiktok-card .platform-link {
+
+    color: #17233b;
 
 }
 
@@ -985,6 +1096,138 @@ nav a:hover {
 
 }
 
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .platform-container {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .platform-card:last-child {
+
+        grid-column: 1 / -1;
+
+        max-width: 500px;
+
+        width: 100%;
+
+        justify-self: center;
+
+    }
+
+
+    .sermon-box {
+
+        padding: 30px;
+
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    #sermons,
+    .watch-platforms {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .sermon-box {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 35px 25px;
+
+        gap: 20px;
+
+    }
+
+
+    .sermon-content {
+
+        text-align: center;
+
+    }
+
+
+    .sermon-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .platform-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        margin-top: 40px;
+
+    }
+
+
+    .platform-card,
+    .platform-card:last-child {
+
+        grid-column: auto;
+
+        max-width: none;
+
+        min-height: auto;
+
+        padding: 40px 25px;
+
+    }
+
+
+    .platform-icon {
+
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 30px;
+
+    }
+
+
+    .facebook-symbol {
+
+        font-size: 43px;
+
+    }
+
+
+    .tiktok-card .platform-icon {
+
+        font-size: 38px;
+
+    }
+
+}
 
 
 /* =========================
