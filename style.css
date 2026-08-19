@@ -1809,4 +1809,211 @@ footer p {
 
     }
 
+   /* =========================
+   WATCH SERMONS PLATFORMS
+========================= */
+
+.watch-platforms {
+
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eaf2f8
+        );
+
+}
+
+
+.platform-container {
+
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* PLATFORM CARD */
+
+.platform-card {
+
+    background: white;
+
+    padding: 45px 30px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: #17233b;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    border: 2px solid transparent;
+
+}
+
+
+.platform-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.15);
+
+}
+
+
+/* PLATFORM ICON */
+
+.platform-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 20px;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
+
+
+/* YOUTUBE */
+
+.youtube-card .platform-icon {
+
+    background: #ff0000;
+
+}
+
+.youtube-card:hover {
+
+    border-color: #ff0000;
+
+}
+
+
+/* FACEBOOK */
+
+.facebook-card .platform-icon {
+
+    background: #1877f2;
+
+}
+
+.facebook-card:hover {
+
+    border-color: #1877f2;
+
+}
+
+
+/* TIKTOK */
+
+.tiktok-card .platform-icon {
+
+    background: #17233b;
+
+}
+
+.tiktok-card:hover {
+
+    border-color: #17233b;
+
+}
+
+
+/* TEXT */
+
+.platform-card h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.platform-card p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+}
+
+
+.platform-card span {
+
+    font-weight: bold;
+
+    color: #9c6b16;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .platform-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .platform-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .watch-platforms {
+
+        padding: 80px 7%;
+
+    }
+
+}
+
 }
