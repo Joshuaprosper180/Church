@@ -1,57 +1,84 @@
-```css
 /* =========================
    GENERAL
 ========================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 
 body {
+
     font-family: Arial, sans-serif;
+
     color: #1f2937;
+
     line-height: 1.6;
+
 }
 
 
 section {
+
     scroll-margin-top: 80px;
+
 }
 
 
 .section-container {
+
     max-width: 1200px;
+
     margin: auto;
+
 }
 
 
 .section-label {
+
     color: #9c6b16;
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
+
     margin-bottom: 15px;
+
 }
 
 
 .section-title {
+
     font-size: 45px;
+
     margin-bottom: 15px;
+
 }
 
 
 .section-description {
+
     max-width: 650px;
+
     margin: auto;
+
     color: #555;
+
 }
 
 
@@ -62,18 +89,23 @@ section {
 header {
 
     width: 100%;
+
     height: 80px;
 
     padding: 0 7%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     background: white;
 
     position: fixed;
+
     top: 0;
+
     left: 0;
 
     z-index: 1000;
@@ -86,7 +118,9 @@ header {
 .logo {
 
     font-size: 21px;
+
     font-weight: bold;
+
     color: #17233b;
 
 }
@@ -95,6 +129,7 @@ header {
 nav {
 
     display: flex;
+
     gap: 28px;
 
 }
@@ -103,9 +138,11 @@ nav {
 nav a {
 
     text-decoration: none;
+
     color: #333;
 
     font-size: 15px;
+
     font-weight: 600;
 
     transition: 0.3s;
@@ -127,9 +164,11 @@ nav a:hover {
     display: none;
 
     border: none;
+
     background: transparent;
 
     font-size: 28px;
+
     cursor: pointer;
 
     color: #17233b;
@@ -146,6 +185,7 @@ nav a:hover {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
 
     padding: 120px 7% 70px;
@@ -160,6 +200,7 @@ nav a:hover {
         url("images/church.jpg");
 
     background-size: cover;
+
     background-position: center;
 
     color: white;
@@ -179,6 +220,7 @@ nav a:hover {
     color: #f2c66d;
 
     font-weight: bold;
+
     font-size: 14px;
 
     letter-spacing: 4px;
@@ -217,6 +259,7 @@ nav a:hover {
 .hero-buttons {
 
     display: flex;
+
     gap: 15px;
 
 }
@@ -246,6 +289,7 @@ nav a:hover {
 .btn {
 
     background: #f2c66d;
+
     color: #17233b;
 
 }
@@ -261,6 +305,7 @@ nav a:hover {
 .btn-outline {
 
     border: 2px solid white;
+
     color: white;
 
 }
@@ -269,6 +314,7 @@ nav a:hover {
 .btn-outline:hover {
 
     background: white;
+
     color: #17233b;
 
 }
@@ -283,6 +329,7 @@ nav a:hover {
     padding: 110px 8%;
 
     background:
+
         linear-gradient(
             135deg,
             #f7f1e8,
@@ -345,6 +392,17 @@ nav a:hover {
 }
 
 
+.about-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+}
+
+
 .about-box {
 
     background: #17233b;
@@ -380,15 +438,9 @@ nav a:hover {
 }
 
 
-/* =========================
-   PASTOR PHOTO
-========================= */
-
 .pastor-box {
 
     text-align: center;
-
-    margin-bottom: 25px;
 
 }
 
@@ -422,11 +474,9 @@ nav a:hover {
 
     color: #f2c66d;
 
-    margin-top: 5px;
+    margin-top: 10px;
 
     margin-bottom: 3px;
-
-    font-size: 24px;
 
 }
 
@@ -442,11 +492,9 @@ nav a:hover {
 }
 
 
-.vision-content {
+.vision-box {
 
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-    padding-top: 20px;
+    margin-top: 0;
 
 }
 
@@ -539,6 +587,7 @@ nav a:hover {
     padding: 110px 8%;
 
     background:
+
         linear-gradient(
             135deg,
             #fff4d6,
@@ -647,6 +696,7 @@ nav a:hover {
     padding: 110px 8%;
 
     background:
+
         linear-gradient(
             135deg,
             #edf7f0,
@@ -685,14 +735,25 @@ nav a:hover {
 }
 
 
+.sermon-content {
+
+    flex: 1;
+
+}
+
+
 .sermon-icon {
 
     width: 65px;
+
     height: 65px;
+
+    min-width: 65px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background: #17233b;
@@ -731,6 +792,7 @@ nav a:hover {
     padding: 110px 8%;
 
     background:
+
         linear-gradient(
             135deg,
             #17233b,
@@ -751,7 +813,7 @@ nav a:hover {
 
     gap: 80px;
 
-    align-items: center;
+    align-items: start;
 
 }
 
@@ -825,7 +887,9 @@ nav a:hover {
 }
 
 
-/* CONTACT CARD */
+/* =========================
+   CONTACT CARD
+========================= */
 
 .contact-card {
 
@@ -844,7 +908,7 @@ nav a:hover {
 }
 
 
-.contact-card h3 {
+.contact-card-title {
 
     font-size: 28px;
 
@@ -901,6 +965,470 @@ nav a:hover {
 
 }
 
+
+/* =========================
+   SUPPORT THE MINISTRY
+========================= */
+
+.support-box {
+
+    margin-top: 35px;
+
+    padding: 28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f7f1e8,
+            #fffdf7
+        );
+
+    border-radius: 16px;
+
+    border: 1px solid #e6d7ad;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.08);
+
+}
+
+
+/* SUPPORT TOP */
+
+.support-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.support-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #17233b;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+}
+
+
+.support-label {
+
+    color: #9c6b16;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 2px;
+
+}
+
+
+.support-box h3 {
+
+    color: #17233b;
+
+    font-size: 25px;
+
+    margin: 0;
+
+}
+
+
+.support-text {
+
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ACCOUNT */
+
+.support-account {
+
+    background: white;
+
+    padding: 14px 18px;
+
+    border-left: 4px solid #9c6b16;
+
+    border-radius: 8px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.05);
+
+}
+
+
+.support-account span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.support-account strong {
+
+    color: #17233b;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================
+   PAYMENT CARDS
+========================= */
+
+.payment-option {
+
+    background: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,0.08);
+
+}
+
+
+/* PAYMENT HEADER */
+
+.payment-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+}
+
+
+.network-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.network-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    min-width: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    font-weight: bold;
+
+}
+
+
+/* MTN */
+
+.mtn-header {
+
+    background: #f2c500;
+
+    color: #17233b;
+
+}
+
+
+.mtn-logo {
+
+    border: 3px solid #17233b;
+
+    color: #17233b;
+
+    font-size: 14px;
+
+}
+
+
+/* AIRTEL */
+
+.airtel-header {
+
+    background: #d71920;
+
+    color: white;
+
+}
+
+
+.airtel-logo {
+
+    color: #d71920;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+}
+
+
+/* NETWORK INFORMATION */
+
+.network-name {
+
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+.network-brand small {
+
+    display: block;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+
+}
+
+
+.payment-badge {
+
+    padding: 5px 9px;
+
+    background: rgba(255,255,255,0.35);
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   PAYMENT BODY
+========================= */
+
+.payment-body {
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+.send-label {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.payment-number {
+
+    display: block;
+
+    color: #17233b;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    margin-bottom: 4px;
+
+}
+
+
+.account-name {
+
+    color: #9c6b16;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   PAYMENT BUTTON
+========================= */
+
+.pay-now-btn {
+
+    margin: 0 18px 18px;
+
+    padding: 14px 17px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-radius: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.mtn-btn {
+
+    background: #17233b;
+
+}
+
+
+.airtel-btn {
+
+    background: #d71920;
+
+}
+
+
+.pay-now-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(0,0,0,0.20);
+
+}
+
+
+.arrow {
+
+    font-size: 22px;
+
+}
+
+
+/* SUPPORT FOOTER */
+
+.support-footer {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+    padding-top: 5px;
+
+}
+
+
+.support-footer span {
+
+    font-size: 16px;
+
+}
+
+
+.support-footer p {
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   EMAIL BUTTON
+========================= */
 
 .contact-button {
 
@@ -969,6 +1497,7 @@ footer p {
 
 @media (max-width: 900px) {
 
+
     .ministries-container {
 
         grid-template-columns:
@@ -986,7 +1515,7 @@ footer p {
     }
 
 
-    .about-box {
+    .about-right {
 
         max-width: 650px;
 
@@ -1021,8 +1550,6 @@ footer p {
     .menu-toggle {
 
         display: block;
-
-        color: #17233b;
 
     }
 
@@ -1059,13 +1586,6 @@ footer p {
     nav.active {
 
         display: flex;
-
-    }
-
-
-    nav a {
-
-        padding: 8px 0;
 
     }
 
@@ -1148,29 +1668,18 @@ footer p {
     }
 
 
-    /* PASTOR PHOTO ON MOBILE */
+    .about-box {
 
-    .pastor-box {
-
-        padding: 30px 20px;
-
-        margin-bottom: 25px;
+        padding: 30px 25px;
 
     }
 
 
     .pastor-image {
 
-        width: 160px;
+        width: 150px;
 
-        height: 160px;
-
-    }
-
-
-    .pastor-name {
-
-        font-size: 22px;
+        height: 150px;
 
     }
 
@@ -1186,7 +1695,7 @@ footer p {
 
     .contact-card {
 
-        padding: 25px;
+        padding: 25px 18px;
 
     }
 
@@ -1196,6 +1705,43 @@ footer p {
         flex-direction: column;
 
         align-items: flex-start;
+
+        gap: 8px;
+
+    }
+
+
+    .support-box {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .support-box h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .payment-number {
+
+        font-size: 22px;
+
+    }
+
+
+    .network-name {
+
+        font-size: 13px;
+
+    }
+
+
+    .network-brand small {
+
+        font-size: 10px;
 
     }
 
@@ -1208,553 +1754,33 @@ footer p {
 
     }
 
-   /* =========================
-/* =========================
-   SUPPORT THE MINISTRY
-========================= */
-
-.support-box {
-
-    margin-top: 35px;
-
-    padding: 35px 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8f4ea,
-            #fffdf8
-        );
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    border: 1px solid #ead9a8;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.10);
-
-}
-
-
-/* HEART ICON */
-
-.support-icon {
-
-    width: 70px;
-    height: 70px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #17233b,
-            #314a78
-        );
-
-    border-radius: 50%;
-
-    font-size: 32px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(23, 35, 59, 0.25);
-
-}
-
-
-/* SMALL LABEL */
-
-.support-label {
-
-    color: #9c6b16;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 8px;
-
-}
-
-
-/* MAIN TITLE */
-
-.support-box h3 {
-
-    color: #17233b;
-
-    font-size: 30px;
-
-    margin-bottom: 12px;
-
-}
-
-
-/* DESCRIPTION */
-
-.support-text {
-
-    max-width: 500px;
-
-    margin:
-        0 auto
-        25px;
-
-    color: #666;
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-}
-
-
-/* ACCOUNT BOX */
-
-.support-account {
-
-    background: white;
-
-    padding: 15px;
-
-    border-radius: 10px;
-
-    margin-bottom: 25px;
-
-    border-left:
-        4px solid #9c6b16;
-
-    box-shadow:
-        0 4px 12px
-        rgba(0, 0, 0, 0.05);
-
-}
-
-
-.support-account span {
-
-    display: block;
-
-    color: #777;
-
-    font-size: 12px;
-
-    margin-bottom: 3px;
-
-}
-
-
-.support-account strong {
-
-    color: #17233b;
-
-    font-size: 17px;
-
 }
 
 
 /* =========================
-   PAYMENT CARD
+   SMALL MOBILE DEVICES
 ========================= */
 
-.payment-option {
+@media (max-width: 400px) {
 
-    background: white;
 
-    border-radius: 14px;
+    .logo {
 
-    margin-top: 20px;
-
-    overflow: hidden;
-
-    text-align: left;
-
-    border:
-        1px solid
-        rgba(0, 0, 0, 0.06);
-
-    box-shadow:
-        0 8px 25px
-        rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s;
-
-}
-
-
-.payment-option:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 15px 30px
-        rgba(0, 0, 0, 0.13);
-
-}
-
-
-/* =========================
-   PAYMENT HEADER
-========================= */
-
-.payment-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 18px;
-
-}
-
-
-.mtn-payment .payment-header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5d000,
-            #ffd900
-        );
-
-}
-
-
-.airtel-payment .payment-header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #c9151d,
-            #e5232b
-        );
-
-}
-
-
-.network-brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-}
-
-
-/* NETWORK LOGO */
-
-.network-logo {
-
-    width: 50px;
-
-    height: 50px;
-
-    object-fit: contain;
-
-    background: white;
-
-    padding: 4px;
-
-    border-radius: 50%;
-
-}
-
-
-.network-brand div {
-
-    display: flex;
-
-    flex-direction: column;
-
-}
-
-
-/* NETWORK NAME */
-
-.network-name {
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    letter-spacing: 0.5px;
-
-}
-
-
-.mtn-payment .network-name {
-
-    color: #17233b;
-
-}
-
-
-.airtel-payment .network-name {
-
-    color: white;
-
-}
-
-
-.network-brand small {
-
-    margin-top: 3px;
-
-    font-size: 11px;
-
-}
-
-
-.mtn-payment .network-brand small {
-
-    color: #514700;
-
-}
-
-
-.airtel-payment .network-brand small {
-
-    color: #ffe5e5;
-
-}
-
-
-/* BADGE */
-
-.payment-badge {
-
-    padding: 6px 10px;
-
-    border-radius: 20px;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-}
-
-
-.mtn-payment .payment-badge {
-
-    background: #17233b;
-
-    color: white;
-
-}
-
-
-.airtel-payment .payment-badge {
-
-    background: white;
-
-    color: #d71920;
-
-}
-
-
-/* =========================
-   PAYMENT BODY
-========================= */
-
-.payment-body {
-
-    padding: 22px;
-
-    text-align: center;
-
-}
-
-
-.send-label {
-
-    color: #777;
-
-    font-size: 13px;
-
-    margin-bottom: 5px;
-
-}
-
-
-/* MOBILE MONEY NUMBER */
-
-.payment-number {
-
-    display: inline-block;
-
-    color: #17233b;
-
-    font-size: 28px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    text-decoration: none;
-
-    margin-bottom: 5px;
-
-}
-
-
-.payment-number:hover {
-
-    color: #9c6b16;
-
-}
-
-
-/* ACCOUNT HOLDER */
-
-.account-name {
-
-    color: #9c6b16;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-}
-
-
-/* =========================
-   PAYMENT BUTTON
-========================= */
-
-.pay-now-btn {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 15px 20px;
-
-    margin: 0 18px 20px;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border-radius: 9px;
-
-    transition: 0.3s;
-
-}
-
-
-.mtn-btn {
-
-    background: #17233b;
-
-}
-
-
-.airtel-btn {
-
-    background: #d71920;
-
-}
-
-
-.pay-now-btn:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 6px 15px
-        rgba(0, 0, 0, 0.18);
-
-}
-
-
-/* =========================
-   THANK YOU MESSAGE
-========================= */
-
-.support-footer {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 25px;
-
-    padding-top: 20px;
-
-    border-top:
-        1px solid #ead9a8;
-
-}
-
-
-.support-footer span {
-
-    font-size: 20px;
-
-}
-
-
-.support-footer p {
-
-    color: #777;
-
-    font-size: 13px;
-
-    font-style: italic;
-
-}
-
-
-/* =========================
-   MOBILE SUPPORT SECTION
-========================= */
-
-@media (max-width: 500px) {
-
-    .support-box {
-
-        padding: 30px 15px;
+        font-size: 16px;
 
     }
 
 
-    .support-box h3 {
+    .hero h1 {
 
-        font-size: 25px;
+        font-size: 36px;
 
     }
 
 
-    .payment-header {
+    .support-top {
 
-        padding: 14px;
+        align-items: flex-start;
 
     }
 
@@ -1765,28 +1791,21 @@ footer p {
 
         height: 42px;
 
-    }
-
-
-    .network-name {
-
-        font-size: 13px;
+        min-width: 42px;
 
     }
 
 
-    .payment-number {
+    .payment-header {
 
-        font-size: 23px;
+        padding: 13px;
 
     }
 
 
     .pay-now-btn {
 
-        margin:
-            0 12px
-            15px;
+        font-size: 12px;
 
     }
 
