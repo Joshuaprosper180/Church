@@ -1209,152 +1209,141 @@ footer p {
     }
 
    /* =========================
+/* =========================
    SUPPORT THE MINISTRY
 ========================= */
 
 .support-box {
 
-    margin-top: 30px;
+    margin-top: 35px;
 
-    padding: 30px;
+    padding: 35px 25px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff4d6,
-            #fce3b0
-        );
+    background: linear-gradient(
+        135deg,
+        #f7f1e8,
+        #fff4d6
+    );
 
     border-radius: 15px;
 
     text-align: center;
 
-    border: 1px solid #e8c56f;
+    border: 1px solid #e5c979;
 
     box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.08);
+        0 10px 30px
+        rgba(0,0,0,0.10);
 
 }
 
 
 .support-icon {
 
-    width: 60px;
-    height: 60px;
-
-    margin: 0 auto 15px;
+    width: 65px;
+    height: 65px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    margin: 0 auto 15px;
+
     background: #17233b;
 
     border-radius: 50%;
 
-    font-size: 28px;
+    font-size: 30px;
 
 }
 
 
-.support-content h3 {
-
-    font-size: 25px;
+.support-box h3 {
 
     color: #17233b;
+
+    font-size: 28px;
 
     margin-bottom: 10px;
 
 }
 
 
-.support-content p {
+.support-text {
 
     color: #555;
 
     font-size: 15px;
 
-    margin-bottom: 20px;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
 
 }
 
 
-.support-content h4 {
+.support-box h4 {
 
     color: #9c6b16;
 
-    font-size: 18px;
+    font-size: 20px;
 
-    margin-bottom: 15px;
-
-}
-
-
-/* SUPPORT NUMBERS */
-
-.support-number {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background: white;
-
-    padding: 12px 15px;
-
-    margin-top: 10px;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 3px 10px
-        rgba(0,0,0,0.06);
+    margin-bottom: 8px;
 
 }
 
 
-.support-number a {
+.support-name {
 
     color: #17233b;
 
     font-weight: bold;
 
-    font-size: 17px;
-
-    text-decoration: none;
+    margin-bottom: 25px;
 
 }
 
 
-/* NETWORK LABELS */
+/* PAYMENT OPTIONS */
 
-.network {
+.payment-option {
+
+    background: white;
+
+    border-radius: 12px;
+
+    margin-top: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.08);
+
+}
+
+
+/* PAYMENT NETWORK HEADER */
+
+.payment-network {
+
+    padding: 13px;
 
     color: white;
 
-    padding: 4px 10px;
-
-    border-radius: 5px;
-
-    font-size: 12px;
+    font-size: 15px;
 
     font-weight: bold;
 
-}
-
-
-.airtel {
-
-    background: #d71920;
+    letter-spacing: 1px;
 
 }
 
 
-.mtn {
+/* MTN HEADER */
+
+.mtn-payment .payment-network {
 
     background: #f2c500;
 
@@ -1363,15 +1352,70 @@ footer p {
 }
 
 
+/* AIRTEL HEADER */
+
+.airtel-payment .payment-network {
+
+    background: #d71920;
+
+}
+
+
+/* PAYMENT DETAILS */
+
+.payment-details {
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.payment-details span {
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.payment-details strong {
+
+    color: #17233b;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.payment-details small {
+
+    color: #9c6b16;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
 /* SUPPORT BUTTON */
 
-.support-button {
+.pay-now-btn {
 
     display: block;
 
-    margin-top: 20px;
+    margin: 0 18px 18px;
 
-    padding: 14px 20px;
+    padding: 13px;
 
     background: #17233b;
 
@@ -1388,13 +1432,24 @@ footer p {
 }
 
 
-.support-button:hover {
+.pay-now-btn:hover {
 
     background: #9c6b16;
 
     transform: translateY(-2px);
 
 }
+
+
+.support-thank-you {
+
+    margin-top: 25px;
+
+    color: #555;
+
+    font-style: italic;
+
+    font-size: 14px;
 
 }
 ```
