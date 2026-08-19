@@ -1219,29 +1219,32 @@ footer p {
 
     padding: 35px 25px;
 
-    background: linear-gradient(
-        135deg,
-        #f7f1e8,
-        #fff4d6
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #f8f4ea,
+            #fffdf8
+        );
 
-    border-radius: 15px;
+    border-radius: 18px;
 
     text-align: center;
 
-    border: 1px solid #e5c979;
+    border: 1px solid #ead9a8;
 
     box-shadow:
-        0 10px 30px
-        rgba(0,0,0,0.10);
+        0 15px 40px
+        rgba(0, 0, 0, 0.10);
 
 }
 
 
+/* HEART ICON */
+
 .support-icon {
 
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
 
     display: flex;
 
@@ -1250,89 +1253,297 @@ footer p {
 
     margin: 0 auto 15px;
 
-    background: #17233b;
+    background:
+        linear-gradient(
+            135deg,
+            #17233b,
+            #314a78
+        );
 
     border-radius: 50%;
 
-    font-size: 30px;
+    font-size: 32px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(23, 35, 59, 0.25);
 
 }
 
 
-.support-box h3 {
+/* SMALL LABEL */
 
-    color: #17233b;
-
-    font-size: 28px;
-
-    margin-bottom: 10px;
-
-}
-
-
-.support-text {
-
-    color: #555;
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
-
-}
-
-
-.support-box h4 {
+.support-label {
 
     color: #9c6b16;
 
-    font-size: 20px;
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
 
     margin-bottom: 8px;
 
 }
 
 
-.support-name {
+/* MAIN TITLE */
+
+.support-box h3 {
 
     color: #17233b;
 
-    font-weight: bold;
+    font-size: 30px;
 
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 
 }
 
 
-/* PAYMENT OPTIONS */
+/* DESCRIPTION */
+
+.support-text {
+
+    max-width: 500px;
+
+    margin:
+        0 auto
+        25px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ACCOUNT BOX */
+
+.support-account {
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    border-left:
+        4px solid #9c6b16;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.05);
+
+}
+
+
+.support-account span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.support-account strong {
+
+    color: #17233b;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================
+   PAYMENT CARD
+========================= */
 
 .payment-option {
 
     background: white;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
-    margin-top: 18px;
+    margin-top: 20px;
 
     overflow: hidden;
 
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.06);
+
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,0.08);
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
 
 }
 
 
-/* PAYMENT NETWORK HEADER */
+.payment-option:hover {
 
-.payment-network {
+    transform:
+        translateY(-4px);
 
-    padding: 13px;
+    box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.13);
+
+}
+
+
+/* =========================
+   PAYMENT HEADER
+========================= */
+
+.payment-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px;
+
+}
+
+
+.mtn-payment .payment-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5d000,
+            #ffd900
+        );
+
+}
+
+
+.airtel-payment .payment-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9151d,
+            #e5232b
+        );
+
+}
+
+
+.network-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+/* NETWORK LOGO */
+
+.network-logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+}
+
+
+.network-brand div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* NETWORK NAME */
+
+.network-name {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.mtn-payment .network-name {
+
+    color: #17233b;
+
+}
+
+
+.airtel-payment .network-name {
 
     color: white;
 
-    font-size: 15px;
+}
+
+
+.network-brand small {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+}
+
+
+.mtn-payment .network-brand small {
+
+    color: #514700;
+
+}
+
+
+.airtel-payment .network-brand small {
+
+    color: #ffe5e5;
+
+}
+
+
+/* BADGE */
+
+.payment-badge {
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
 
     font-weight: bold;
 
@@ -1341,62 +1552,79 @@ footer p {
 }
 
 
-/* MTN HEADER */
+.mtn-payment .payment-badge {
 
-.mtn-payment .payment-network {
+    background: #17233b;
 
-    background: #f2c500;
-
-    color: #17233b;
+    color: white;
 
 }
 
 
-/* AIRTEL HEADER */
+.airtel-payment .payment-badge {
 
-.airtel-payment .payment-network {
+    background: white;
 
-    background: #d71920;
-
-}
-
-
-/* PAYMENT DETAILS */
-
-.payment-details {
-
-    padding: 18px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
+    color: #d71920;
 
 }
 
 
-.payment-details span {
+/* =========================
+   PAYMENT BODY
+========================= */
+
+.payment-body {
+
+    padding: 22px;
+
+    text-align: center;
+
+}
+
+
+.send-label {
 
     color: #777;
 
     font-size: 13px;
 
+    margin-bottom: 5px;
+
 }
 
 
-.payment-details strong {
+/* MOBILE MONEY NUMBER */
+
+.payment-number {
+
+    display: inline-block;
 
     color: #17233b;
 
-    font-size: 25px;
+    font-size: 28px;
+
+    font-weight: bold;
 
     letter-spacing: 1px;
+
+    text-decoration: none;
+
+    margin-bottom: 5px;
 
 }
 
 
-.payment-details small {
+.payment-number:hover {
+
+    color: #9c6b16;
+
+}
+
+
+/* ACCOUNT HOLDER */
+
+.account-name {
 
     color: #9c6b16;
 
@@ -1407,17 +1635,21 @@ footer p {
 }
 
 
-/* SUPPORT BUTTON */
+/* =========================
+   PAYMENT BUTTON
+========================= */
 
 .pay-now-btn {
 
-    display: block;
+    display: flex;
 
-    margin: 0 18px 18px;
+    align-items: center;
 
-    padding: 13px;
+    justify-content: space-between;
 
-    background: #17233b;
+    padding: 15px 20px;
+
+    margin: 0 18px 20px;
 
     color: white;
 
@@ -1425,31 +1657,137 @@ footer p {
 
     font-weight: bold;
 
-    border-radius: 7px;
+    border-radius: 9px;
 
     transition: 0.3s;
 
 }
 
 
-.pay-now-btn:hover {
+.mtn-btn {
 
-    background: #9c6b16;
-
-    transform: translateY(-2px);
+    background: #17233b;
 
 }
 
 
-.support-thank-you {
+.airtel-btn {
+
+    background: #d71920;
+
+}
+
+
+.pay-now-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =========================
+   THANK YOU MESSAGE
+========================= */
+
+.support-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
 
     margin-top: 25px;
 
-    color: #555;
+    padding-top: 20px;
+
+    border-top:
+        1px solid #ead9a8;
+
+}
+
+
+.support-footer span {
+
+    font-size: 20px;
+
+}
+
+
+.support-footer p {
+
+    color: #777;
+
+    font-size: 13px;
 
     font-style: italic;
 
-    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE SUPPORT SECTION
+========================= */
+
+@media (max-width: 500px) {
+
+    .support-box {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .support-box h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .payment-header {
+
+        padding: 14px;
+
+    }
+
+
+    .network-logo {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .network-name {
+
+        font-size: 13px;
+
+    }
+
+
+    .payment-number {
+
+        font-size: 23px;
+
+    }
+
+
+    .pay-now-btn {
+
+        margin:
+            0 12px
+            15px;
+
+    }
 
 }
-```
