@@ -419,7 +419,70 @@ nav a:hover {
     margin-top: 50px;
     text-align: left;
 }
+/* SERMON CARD */
+.sermon-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    margin-top: 50px;
+    max-width: 500px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    text-align: left;
+}
 
+/* SERMON ICON */
+.sermon-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #17233b;
+    color: #f2c66d;
+    border-radius: 50%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* SERMON TITLE */
+.sermon-content h3 {
+    color: #17233b;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.sermon-content p {
+    color: #666;
+}
+
+/* WATCH SERMON BUTTON */
+.sermon-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #17233b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.sermon-button span {
+    font-size: 18px;
+    transition: transform .3s ease;
+}
+
+.sermon-button:hover {
+    background: #9c6b16;
+    transform: translateY(-3px);
+}
+
+.sermon-button:hover span {
+    transform: translateX(5px);
+}
 .sermon-card {
     background: #fff;
     border-radius: 18px;
