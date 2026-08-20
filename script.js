@@ -1,34 +1,37 @@
 /* =========================================================
    SEETA REVIVAL CHURCH
-   WEBSITE + ADMIN PANEL JAVASCRIPT
+   WEBSITE JAVASCRIPT
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       DEFAULT DATA
-    ===================================================== */
+/* =========================================================
+   DEFAULT WEBSITE DATA
+========================================================= */
 
-    const defaultEvents = [
+const defaultData = {
+
+    events: [
         {
             id: 1,
             date: "28 AUGUST 2026",
             title: "Worship Night",
-            description: "An evening of worship, prayer and encountering the presence of God.",
+            description:
+                "An evening of worship, prayer and encountering the presence of God.",
             link: "#contact"
         }
-    ];
+    ],
 
-    const defaultSermons = [
+    sermons: [
         {
             id: 1,
             title: "Messages That Transform Lives",
-            description: "Watch powerful teachings and sermons that will strengthen your faith.",
+            description:
+                "Watch powerful teachings and sermons that will strengthen your faith.",
             link: "#watch-sermons"
         }
-    ];
+    ],
 
-    const defaultContacts = {
+    contacts: {
         location: "Seeta, Kasangati, Uganda",
         email: "joshuantale118@gmail.com",
 
@@ -40,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         thirdName: "Pr Wasswa James",
         thirdPhone: "0758428102"
-    };
+    },
 
-    const defaultGiving = {
+    giving: {
         supportName: "Pr Daniel Musanje",
 
         mtnNumber: "0772314539",
@@ -50,133 +53,159 @@ document.addEventListener("DOMContentLoaded", function () {
 
         airtelNumber: "0752277443",
         airtelAccount: "Pr Daniel Musanje"
-    };
+    },
+
+    submissions: []
+};
 
 
-    /* =====================================================
-       LOCAL STORAGE FUNCTIONS
-    ===================================================== */
+/* =========================================================
+   LOAD DATA FROM LOCAL STORAGE
+========================================================= */
 
-    function getData(key, defaultValue) {
+function loadData() {
 
-        const saved = localStorage.getItem(key);
+    const savedData = localStorage.getItem("seetaRevivalData");
 
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (error) {
-                return defaultValue;
-            }
+    if (savedData) {
+
+        try {
+
+            return JSON.parse(savedData);
+
+        } catch (error) {
+
+            console.error("Could not read saved data:", error);
+
+            return JSON.parse(JSON.stringify(defaultData));
         }
 
-        localStorage.setItem(key, JSON.stringify(defaultValue));
-
-        return defaultValue;
     }
 
-
-    function saveData(key, data) {
-        localStorage.setItem(key, JSON.stringify(data));
-    }
+    return JSON.parse(JSON.stringify(defaultData));
+}
 
 
-    let events = getData("churchEvents", defaultEvents);
-    let sermons = getData("churchSermons", defaultSermons);
-    let contacts = getData("churchContacts", defaultContacts);
-    let giving = getData("churchGiving", defaultGiving);
-    let submissions = getData("churchSupportSubmissions", []);
+let data = loadData();
 
 
-    /* =====================================================
-       MOBILE NAVIGATION
-    ===================================================== */
+/* =========================================================
+   SAVE DATA
+========================================================= */
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+function saveData() {
+
+    localStorage.setItem(
+        "seetaRevivalData",
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* =========================================================
+   HELPER FUNCTION
+========================================================= */
+
+function getElement(id) {
+
+    return document.getElementById(id);
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = getElement("menu-toggle");
+    const navMenu = getElement("nav-menu");
 
     if (menuToggle && navMenu) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
             navMenu.classList.toggle("active");
+
         });
 
-        navMenu.querySelectorAll("a").forEach(function (link) {
+
+        const navLinks = navMenu.querySelectorAll("a");
+
+        navLinks.forEach(function (link) {
 
             link.addEventListener("click", function () {
+
                 navMenu.classList.remove("active");
+
             });
 
         });
+
     }
 
 
     /* =====================================================
-       MODAL FUNCTIONS
+       INITIALIZE WEBSITE
     ===================================================== */
 
-    function openModal(id) {
-
-        const modal = document.getElementById(id);
-
-        if (modal) {
-            modal.classList.add("show");
-        }
-    }
-
-
-    function closeModal(id) {
-
-        const modal = document.getElementById(id);
-
-        if (modal) {
-            modal.classList.remove("show");
-        }
-    }
-
-
-    document.querySelectorAll(".close-modal").forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const id = button.getAttribute("data-close");
-
-            closeModal(id);
-
-        });
-
-    });
-
-
-    document.querySelectorAll(".modal").forEach(function (modal) {
-
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                modal.classList.remove("show");
-            }
-
-        });
-
-    });
+    renderEvents();
+    renderSermons();
+    renderContacts();
+    renderGiving();
+    renderSupportSubmissions();
 
 
     /* =====================================================
-       ADMIN LOGIN
+       ADMIN LOGIN BUTTON
     ===================================================== */
 
-    const openLoginButton = document.getElementById("open-login");
-    const loginModal = document.getElementById("login-modal");
-    const loginForm = document.getElementById("login-form");
-    const loginMessage = document.getElementById("login-message");
+    const openLoginButton = getElement("open-login");
 
     if (openLoginButton) {
 
-        openLoginButton.addEventListener("click", function () {
+        openLoginButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
             openModal("login-modal");
+
         });
 
     }
 
+
+    /* =====================================================
+       SUPPORT BUTTON
+    ===================================================== */
+
+    const supportButton = getElement("open-support-form");
+
+    if (supportButton) {
+
+        supportButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            openModal("support-modal");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       LOGIN FORM
+    ===================================================== */
+
+    const loginForm = getElement("login-form");
 
     if (loginForm) {
 
@@ -184,47 +213,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
             event.preventDefault();
 
-            const username = document
-                .getElementById("login-username")
-                .value
-                .trim();
+            const username =
+                getElement("login-username").value.trim();
 
-            const password = document
-                .getElementById("login-password")
-                .value;
+            const password =
+                getElement("login-password").value.trim();
 
-            /*
-                CURRENT LOGIN DETAILS
+            const message =
+                getElement("login-message");
 
-                Username: admin
-                Password: church123
-            */
 
-            if (username === "admin" && password === "church123") {
+            if (
+                username === "admin" &&
+                password === "church123"
+            ) {
 
-                loginMessage.textContent = "Login successful.";
-                loginMessage.style.color = "#238636";
+                message.textContent = "Login successful!";
+                message.style.color = "#238636";
+
 
                 setTimeout(function () {
 
                     closeModal("login-modal");
 
-                    document
-                        .getElementById("login-form")
-                        .reset();
-
-                    loginMessage.textContent = "";
-
                     openAdminPanel();
+
+                    loginForm.reset();
+
+                    message.textContent = "";
 
                 }, 500);
 
+
             } else {
 
-                loginMessage.textContent =
+                message.textContent =
                     "Incorrect username or password.";
 
-                loginMessage.style.color = "#b42318";
+                message.style.color = "#b42318";
 
             }
 
@@ -234,51 +260,204 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       ADMIN PANEL
+       SUPPORT FORM
     ===================================================== */
 
-    const adminPanel = document.getElementById("admin-panel");
-    const closeAdminButton = document.getElementById("close-admin");
-    const logoutButton = document.getElementById("logout-btn");
+    const supportForm = getElement("support-form");
+
+    if (supportForm) {
+
+        supportForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
 
 
-    function openAdminPanel() {
+            const name =
+                getElement("giver-name").value.trim();
 
-        if (!adminPanel) return;
+            const phone =
+                getElement("giver-phone").value.trim();
 
-        adminPanel.classList.add("show");
+            const amount =
+                getElement("support-amount").value;
 
-        document.body.style.overflow = "hidden";
+            const network =
+                getElement("support-network").value;
 
-        renderAdminEvents();
-        renderAdminSermons();
-        renderSupportSubmissions();
+            const proofInput =
+                getElement("support-proof");
 
-        loadContactsForm();
-        loadGivingForm();
+            const note =
+                getElement("support-note").value.trim();
 
-    }
-
-
-    function closeAdminPanel() {
-
-        if (!adminPanel) return;
-
-        adminPanel.classList.remove("show");
-
-        document.body.style.overflow = "";
-
-    }
+            const message =
+                getElement("support-message");
 
 
-    if (closeAdminButton) {
+            if (!name || !phone || !amount) {
 
-        closeAdminButton.addEventListener("click", function () {
-            closeAdminPanel();
+                message.textContent =
+                    "Please fill in all required fields.";
+
+                message.style.color = "#b42318";
+
+                return;
+
+            }
+
+
+            let proofName = "";
+
+            if (
+                proofInput &&
+                proofInput.files &&
+                proofInput.files.length > 0
+            ) {
+
+                proofName = proofInput.files[0].name;
+
+            }
+
+
+            const submission = {
+
+                id: Date.now(),
+
+                name: name,
+
+                phone: phone,
+
+                amount: amount,
+
+                network: network,
+
+                proof: proofName,
+
+                note: note,
+
+                status: "Pending",
+
+                date: new Date().toLocaleString()
+
+            };
+
+
+            data.submissions.unshift(submission);
+
+            saveData();
+
+            renderSupportSubmissions();
+
+
+            message.textContent =
+                "Thank you! Your support has been submitted.";
+
+            message.style.color = "#238636";
+
+
+            setTimeout(function () {
+
+                supportForm.reset();
+
+                closeModal("support-modal");
+
+                message.textContent = "";
+
+            }, 1500);
+
         });
 
     }
 
+
+    /* =====================================================
+       CLOSE MODAL BUTTONS
+    ===================================================== */
+
+    const closeButtons =
+        document.querySelectorAll(".close-modal");
+
+    closeButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const modalId =
+                button.getAttribute("data-close");
+
+            if (modalId) {
+
+                closeModal(modalId);
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CLICK OUTSIDE MODAL TO CLOSE
+    ===================================================== */
+
+    document.querySelectorAll(".modal").forEach(function (modal) {
+
+        modal.addEventListener("click", function (event) {
+
+            if (event.target === modal) {
+
+                modal.classList.remove("show");
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       ESCAPE KEY CLOSES MODALS
+    ===================================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            document.querySelectorAll(".modal.show")
+                .forEach(function (modal) {
+
+                    modal.classList.remove("show");
+
+                });
+
+        }
+
+    });
+
+
+    /* =====================================================
+       ADMIN CLOSE BUTTON
+    ===================================================== */
+
+    const closeAdmin =
+        getElement("close-admin");
+
+    if (closeAdmin) {
+
+        closeAdmin.addEventListener("click", function () {
+
+            closeAdminPanel();
+
+        });
+
+    }
+
+
+    /* =====================================================
+       LOGOUT
+    ===================================================== */
+
+    const logoutButton =
+        getElement("logout-btn");
 
     if (logoutButton) {
 
@@ -295,153 +474,52 @@ document.addEventListener("DOMContentLoaded", function () {
        ADMIN TABS
     ===================================================== */
 
-    const adminTabs = document.querySelectorAll(".admin-tab");
-    const adminSections = document.querySelectorAll(".admin-section");
+    document.querySelectorAll(".admin-tab")
+        .forEach(function (button) {
 
-    adminTabs.forEach(function (tab) {
+            button.addEventListener("click", function () {
 
-        tab.addEventListener("click", function () {
+                const tabId =
+                    button.getAttribute("data-tab");
 
-            const target = tab.getAttribute("data-tab");
+                document.querySelectorAll(".admin-tab")
+                    .forEach(function (tab) {
 
-            adminTabs.forEach(function (item) {
-                item.classList.remove("active");
+                        tab.classList.remove("active");
+
+                    });
+
+                button.classList.add("active");
+
+
+                document.querySelectorAll(".admin-section")
+                    .forEach(function (section) {
+
+                        section.classList.remove("active");
+
+                    });
+
+
+                const selectedSection =
+                    getElement(tabId);
+
+                if (selectedSection) {
+
+                    selectedSection.classList.add("active");
+
+                }
+
             });
-
-            adminSections.forEach(function (section) {
-                section.classList.remove("active");
-            });
-
-            tab.classList.add("active");
-
-            const targetSection = document.getElementById(target);
-
-            if (targetSection) {
-                targetSection.classList.add("active");
-            }
 
         });
 
-    });
-
 
     /* =====================================================
-       EVENTS
+       ADD EVENT
     ===================================================== */
 
-    const eventsList = document.getElementById("events-list");
-    const adminEventsList = document.getElementById("admin-events-list");
-    const addEventButton = document.getElementById("add-event-btn");
-
-
-    function renderEvents() {
-
-        if (!eventsList) return;
-
-        if (events.length === 0) {
-
-            eventsList.innerHTML = `
-                <div class="event-card">
-                    <h3>No Upcoming Events</h3>
-                    <p>Please check back soon for upcoming church events.</p>
-                </div>
-            `;
-
-            return;
-        }
-
-
-        eventsList.innerHTML = events.map(function (event) {
-
-            return `
-                <div class="event-card">
-
-                    <p class="event-date">
-                        ${escapeHTML(event.date)}
-                    </p>
-
-                    <h3>
-                        ${escapeHTML(event.title)}
-                    </h3>
-
-                    <p>
-                        ${escapeHTML(event.description)}
-                    </p>
-
-                    <a href="${safeLink(event.link)}"
-                       class="event-btn">
-                        Learn More
-                    </a>
-
-                </div>
-            `;
-
-        }).join("");
-
-    }
-
-
-    function renderAdminEvents() {
-
-        if (!adminEventsList) return;
-
-        if (events.length === 0) {
-
-            adminEventsList.innerHTML = `
-                <div class="empty">
-                    <h3>No events yet</h3>
-                    <p>Click "Add Event" to create your first event.</p>
-                </div>
-            `;
-
-            return;
-        }
-
-
-        adminEventsList.innerHTML = events.map(function (event) {
-
-            return `
-                <div class="admin-item">
-
-                    <div>
-
-                        <h4>
-                            ${escapeHTML(event.title)}
-                        </h4>
-
-                        <p>
-                            <strong>${escapeHTML(event.date)}</strong>
-                        </p>
-
-                        <p>
-                            ${escapeHTML(event.description)}
-                        </p>
-
-                    </div>
-
-                    <div class="item-actions">
-
-                        <button
-                            class="edit-btn"
-                            onclick="editEvent(${event.id})">
-                            Edit
-                        </button>
-
-                        <button
-                            class="delete-btn"
-                            onclick="deleteEvent(${event.id})">
-                            Delete
-                        </button>
-
-                    </div>
-
-                </div>
-            `;
-
-        }).join("");
-
-    }
-
+    const addEventButton =
+        getElement("add-event-btn");
 
     if (addEventButton) {
 
@@ -454,220 +532,687 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    function openEventEditor(event = null) {
+    /* =====================================================
+       ADD SERMON
+    ===================================================== */
 
-        const modal = document.getElementById("editor-modal");
-        const title = document.getElementById("editor-title");
-        const form = document.getElementById("editor-form");
+    const addSermonButton =
+        getElement("add-sermon-btn");
 
-        if (!modal || !form) return;
+    if (addSermonButton) {
 
+        addSermonButton.addEventListener("click", function () {
 
-        title.textContent = event
-            ? "Edit Event"
-            : "Add Event";
+            openSermonEditor();
 
-
-        form.innerHTML = `
-
-            <label>Event Date</label>
-
-            <input
-                type="text"
-                id="editor-event-date"
-                required
-                placeholder="e.g. 28 AUGUST 2026"
-                value="${event ? escapeAttribute(event.date) : ""}"
-            >
-
-
-            <label>Event Title</label>
-
-            <input
-                type="text"
-                id="editor-event-title"
-                required
-                placeholder="Event title"
-                value="${event ? escapeAttribute(event.title) : ""}"
-            >
-
-
-            <label>Description</label>
-
-            <textarea
-                id="editor-event-description"
-                rows="4"
-                required
-                placeholder="Describe the event..."
-            >${event ? escapeHTML(event.description) : ""}</textarea>
-
-
-            <label>Learn More Link</label>
-
-            <input
-                type="text"
-                id="editor-event-link"
-                placeholder="#contact or https://..."
-                value="${event ? escapeAttribute(event.link) : "#contact"}"
-            >
-
-
-            <button
-                class="form-btn"
-                type="submit">
-                ${event ? "Save Changes" : "Add Event"}
-            </button>
-
-            <p
-                class="form-message"
-                id="editor-message">
-            </p>
-        `;
-
-
-        form.onsubmit = function (e) {
-
-            e.preventDefault();
-
-            const eventData = {
-
-                date: document
-                    .getElementById("editor-event-date")
-                    .value
-                    .trim(),
-
-                title: document
-                    .getElementById("editor-event-title")
-                    .value
-                    .trim(),
-
-                description: document
-                    .getElementById("editor-event-description")
-                    .value
-                    .trim(),
-
-                link: document
-                    .getElementById("editor-event-link")
-                    .value
-                    .trim() || "#contact"
-
-            };
-
-
-            if (event) {
-
-                events = events.map(function (item) {
-
-                    if (item.id === event.id) {
-
-                        return {
-                            ...item,
-                            ...eventData
-                        };
-
-                    }
-
-                    return item;
-
-                });
-
-            } else {
-
-                eventData.id = Date.now();
-
-                events.push(eventData);
-
-            }
-
-
-            saveData("churchEvents", events);
-
-            renderEvents();
-            renderAdminEvents();
-
-            closeModal("editor-modal");
-
-        };
-
-
-        openModal("editor-modal");
+        });
 
     }
 
 
-    window.editEvent = function (id) {
+    /* =====================================================
+       CONTACT FORM
+    ===================================================== */
 
-        const event = events.find(function (item) {
-            return item.id === id;
+    const contactsForm =
+        getElement("contacts-form");
+
+    if (contactsForm) {
+
+        contactsForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            data.contacts.location =
+                getElement("admin-location").value;
+
+            data.contacts.email =
+                getElement("admin-email").value;
+
+            data.contacts.pastorName =
+                getElement("admin-pastor-name").value;
+
+            data.contacts.pastorPhone =
+                getElement("admin-pastor-phone").value;
+
+            data.contacts.secondName =
+                getElement("admin-second-name").value;
+
+            data.contacts.secondPhone =
+                getElement("admin-second-phone").value;
+
+            data.contacts.thirdName =
+                getElement("admin-third-name").value;
+
+
+            saveData();
+
+            renderContacts();
+
+
+            const message =
+                getElement("contacts-message");
+
+            message.textContent =
+                "Contact information saved successfully.";
+
         });
 
-        if (event) {
-            openEventEditor(event);
-        }
-
-    };
-
-
-    window.deleteEvent = function (id) {
-
-        const event = events.find(function (item) {
-            return item.id === id;
-        });
-
-        if (!event) return;
-
-
-        const confirmed = confirm(
-            `Delete "${event.title}"?`
-        );
-
-
-        if (!confirmed) return;
-
-
-        events = events.filter(function (item) {
-            return item.id !== id;
-        });
-
-
-        saveData("churchEvents", events);
-
-        renderEvents();
-        renderAdminEvents();
-
-    };
+    }
 
 
     /* =====================================================
-       SERMONS
+       GIVING FORM
     ===================================================== */
 
-    const sermonsList = document.getElementById("sermons-list");
-    const adminSermonsList = document.getElementById("admin-sermons-list");
-    const addSermonButton = document.getElementById("add-sermon-btn");
+    const givingForm =
+        getElement("giving-form");
+
+    if (givingForm) {
+
+        givingForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
 
 
-    function renderSermons() {
+            data.giving.supportName =
+                getElement("admin-support-name").value;
 
-        if (!sermonsList) return;
+            data.giving.mtnNumber =
+                getElement("admin-mtn-number").value;
+
+            data.giving.mtnAccount =
+                getElement("admin-mtn-account").value;
+
+            data.giving.airtelNumber =
+                getElement("admin-airtel-number").value;
+
+            data.giving.airtelAccount =
+                getElement("admin-airtel-account").value;
 
 
-        if (sermons.length === 0) {
+            saveData();
 
-            sermonsList.innerHTML = `
-                <div class="sermon-card">
-                    <h3>No Sermons Available</h3>
-                    <p>New sermons will appear here.</p>
+            renderGiving();
+
+
+            const message =
+                getElement("giving-message");
+
+            message.textContent =
+                "Giving information saved successfully.";
+
+        });
+
+    }
+
+
+    /* =====================================================
+       EDITOR FORM
+    ===================================================== */
+
+    const editorForm =
+        getElement("editor-form");
+
+    if (editorForm) {
+
+        editorForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            saveEditorItem();
+
+        });
+
+    }
+
+
+    /* =====================================================
+       PREVENT ADMIN PANEL FROM CLOSING
+       WHEN CLICKING INSIDE IT
+    ===================================================== */
+
+    const adminPanel =
+        getElement("admin-panel");
+
+    if (adminPanel) {
+
+        adminPanel.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+        });
+
+    }
+
+});
+
+
+/* =========================================================
+   MODAL FUNCTIONS
+========================================================= */
+
+function openModal(id) {
+
+    const modal = getElement(id);
+
+    if (!modal) {
+
+        console.error("Modal not found:", id);
+
+        return;
+
+    }
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeModal(id) {
+
+    const modal = getElement(id);
+
+    if (!modal) return;
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   ADMIN PANEL
+========================================================= */
+
+function openAdminPanel() {
+
+    const panel =
+        getElement("admin-panel");
+
+    if (!panel) {
+
+        console.error("Admin panel not found.");
+
+        return;
+
+    }
+
+    panel.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+    renderAdminEvents();
+    renderAdminSermons();
+    loadContactForm();
+    loadGivingForm();
+    renderSupportSubmissions();
+
+}
+
+
+function closeAdminPanel() {
+
+    const panel =
+        getElement("admin-panel");
+
+    if (!panel) return;
+
+    panel.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   EVENTS - PUBLIC WEBSITE
+========================================================= */
+
+function renderEvents() {
+
+    const container =
+        getElement("events-list");
+
+    if (!container) return;
+
+
+    if (!data.events.length) {
+
+        container.innerHTML =
+            '<div class="empty">No upcoming events available.</div>';
+
+        return;
+
+    }
+
+
+    container.innerHTML = data.events.map(function (event) {
+
+        return `
+
+            <div class="event-card">
+
+                <p class="event-date">
+                    ${escapeHTML(event.date)}
+                </p>
+
+                <h3>
+                    ${escapeHTML(event.title)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(event.description)}
+                </p>
+
+                <a
+                    href="${escapeAttribute(event.link || "#contact")}"
+                    class="event-btn"
+                >
+                    Learn More
+                </a>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+}
+
+
+/* =========================================================
+   ADMIN EVENTS
+========================================================= */
+
+function renderAdminEvents() {
+
+    const container =
+        getElement("admin-events-list");
+
+    if (!container) return;
+
+
+    if (!data.events.length) {
+
+        container.innerHTML =
+            '<div class="empty">No events have been added.</div>';
+
+        return;
+
+    }
+
+
+    container.innerHTML = data.events.map(function (event) {
+
+        return `
+
+            <div class="admin-item">
+
+                <div>
+
+                    <h4>
+                        ${escapeHTML(event.title)}
+                    </h4>
+
+                    <p>
+                        ${escapeHTML(event.date)}
+                    </p>
+
+                    <p>
+                        ${escapeHTML(event.description)}
+                    </p>
+
                 </div>
-            `;
 
-            return;
+                <div class="item-actions">
+
+                    <button
+                        class="edit-btn"
+                        onclick="editEvent(${event.id})"
+                    >
+                        Edit
+                    </button>
+
+                    <button
+                        class="delete-btn"
+                        onclick="deleteEvent(${event.id})"
+                    >
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+}
+
+
+/* =========================================================
+   ADD EVENT
+========================================================= */
+
+function openEventEditor(event = null) {
+
+    const title =
+        getElement("editor-title");
+
+    const form =
+        getElement("editor-form");
+
+
+    if (!title || !form) return;
+
+
+    title.textContent =
+        event ? "Edit Event" : "Add Event";
+
+
+    form.dataset.type = "event";
+
+    form.dataset.id =
+        event ? event.id : "";
+
+
+    form.innerHTML = `
+
+        <label>Event Date</label>
+
+        <input
+            id="editor-date"
+            required
+            value="${event ? escapeAttribute(event.date) : ""}"
+            placeholder="28 AUGUST 2026"
+        >
+
+        <label>Event Name</label>
+
+        <input
+            id="editor-name"
+            required
+            value="${event ? escapeAttribute(event.title) : ""}"
+            placeholder="Worship Night"
+        >
+
+        <label>Description</label>
+
+        <textarea
+            id="editor-description"
+            rows="4"
+            required
+            placeholder="Describe the event..."
+        >${event ? escapeHTML(event.description) : ""}</textarea>
+
+        <label>Learn More Link</label>
+
+        <input
+            id="editor-link"
+            value="${event ? escapeAttribute(event.link || "#contact") : "#contact"}"
+            placeholder="#contact"
+        >
+
+        <button
+            type="submit"
+            class="form-btn"
+        >
+            ${event ? "Update Event" : "Add Event"}
+        </button>
+
+        <p
+            class="form-message"
+            id="editor-message"
+        ></p>
+
+    `;
+
+
+    openModal("editor-modal");
+
+}
+
+
+/* =========================================================
+   SAVE EVENT OR SERMON
+========================================================= */
+
+function saveEditorItem() {
+
+    const form =
+        getElement("editor-form");
+
+    const type =
+        form.dataset.type;
+
+    const id =
+        form.dataset.id;
+
+
+    const date =
+        getElement("editor-date");
+
+    const name =
+        getElement("editor-name");
+
+    const description =
+        getElement("editor-description");
+
+    const link =
+        getElement("editor-link");
+
+
+    if (type === "event") {
+
+        if (!date || !name || !description) return;
+
+
+        if (id) {
+
+            const event =
+                data.events.find(function (item) {
+
+                    return item.id == id;
+
+                });
+
+
+            if (event) {
+
+                event.date = date.value;
+                event.title = name.value;
+                event.description = description.value;
+                event.link = link.value;
+
+            }
+
+        } else {
+
+            data.events.push({
+
+                id: Date.now(),
+
+                date: date.value,
+
+                title: name.value,
+
+                description: description.value,
+
+                link: link.value
+
+            });
+
         }
 
 
-        sermonsList.innerHTML = sermons.map(function (sermon) {
+        saveData();
+
+        renderEvents();
+
+        renderAdminEvents();
+
+        closeModal("editor-modal");
+
+    }
+
+
+    else if (type === "sermon") {
+
+        const sermonTitle =
+            getElement("editor-sermon-title");
+
+        const sermonDescription =
+            getElement("editor-sermon-description");
+
+        const sermonLink =
+            getElement("editor-sermon-link");
+
+
+        if (!sermonTitle || !sermonDescription) return;
+
+
+        if (id) {
+
+            const sermon =
+                data.sermons.find(function (item) {
+
+                    return item.id == id;
+
+                });
+
+
+            if (sermon) {
+
+                sermon.title =
+                    sermonTitle.value;
+
+                sermon.description =
+                    sermonDescription.value;
+
+                sermon.link =
+                    sermonLink.value;
+
+            }
+
+        } else {
+
+            data.sermons.push({
+
+                id: Date.now(),
+
+                title:
+                    sermonTitle.value,
+
+                description:
+                    sermonDescription.value,
+
+                link:
+                    sermonLink.value
+
+            });
+
+        }
+
+
+        saveData();
+
+        renderSermons();
+
+        renderAdminSermons();
+
+        closeModal("editor-modal");
+
+    }
+
+}
+
+
+/* =========================================================
+   EDIT EVENT
+========================================================= */
+
+function editEvent(id) {
+
+    const event =
+        data.events.find(function (item) {
+
+            return item.id == id;
+
+        });
+
+
+    if (event) {
+
+        openEventEditor(event);
+
+    }
+
+}
+
+
+/* =========================================================
+   DELETE EVENT
+========================================================= */
+
+function deleteEvent(id) {
+
+    if (!confirm("Delete this event?")) {
+
+        return;
+
+    }
+
+
+    data.events =
+        data.events.filter(function (event) {
+
+            return event.id != id;
+
+        });
+
+
+    saveData();
+
+    renderEvents();
+
+    renderAdminEvents();
+
+}
+
+
+/* =========================================================
+   SERMONS - PUBLIC WEBSITE
+========================================================= */
+
+function renderSermons() {
+
+    const container =
+        getElement("sermons-list");
+
+    if (!container) return;
+
+
+    if (!data.sermons.length) {
+
+        container.innerHTML =
+            '<div class="empty">No sermons available.</div>';
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        data.sermons.map(function (sermon) {
 
             return `
+
                 <div class="sermon-card">
 
                     <div class="sermon-icon">
@@ -683,42 +1228,49 @@ document.addEventListener("DOMContentLoaded", function () {
                     </p>
 
                     <a
-                        href="${safeLink(sermon.link)}"
+                        href="${escapeAttribute(sermon.link || "#watch-sermons")}"
+                        class="watch-link"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        class="watch-link">
+                    >
                         Watch Sermon →
                     </a>
 
                 </div>
+
             `;
 
         }).join("");
 
+}
+
+
+/* =========================================================
+   ADMIN SERMONS
+========================================================= */
+
+function renderAdminSermons() {
+
+    const container =
+        getElement("admin-sermons-list");
+
+    if (!container) return;
+
+
+    if (!data.sermons.length) {
+
+        container.innerHTML =
+            '<div class="empty">No sermons have been added.</div>';
+
+        return;
+
     }
 
 
-    function renderAdminSermons() {
-
-        if (!adminSermonsList) return;
-
-
-        if (sermons.length === 0) {
-
-            adminSermonsList.innerHTML = `
-                <div class="empty">
-                    <h3>No sermons yet</h3>
-                    <p>Click "Add Sermon" to add one.</p>
-                </div>
-            `;
-
-            return;
-        }
-
-
-        adminSermonsList.innerHTML = sermons.map(function (sermon) {
+    container.innerHTML =
+        data.sermons.map(function (sermon) {
 
             return `
+
                 <div class="admin-item">
 
                     <div>
@@ -731,1009 +1283,696 @@ document.addEventListener("DOMContentLoaded", function () {
                             ${escapeHTML(sermon.description)}
                         </p>
 
-                        <p>
-                            ${escapeHTML(sermon.link)}
-                        </p>
-
                     </div>
 
                     <div class="item-actions">
 
                         <button
                             class="edit-btn"
-                            onclick="editSermon(${sermon.id})">
+                            onclick="editSermon(${sermon.id})"
+                        >
                             Edit
                         </button>
 
                         <button
                             class="delete-btn"
-                            onclick="deleteSermon(${sermon.id})">
+                            onclick="deleteSermon(${sermon.id})"
+                        >
                             Delete
                         </button>
 
                     </div>
 
                 </div>
+
             `;
 
         }).join("");
 
-    }
+}
 
 
-    if (addSermonButton) {
+/* =========================================================
+   ADD SERMON
+========================================================= */
 
-        addSermonButton.addEventListener("click", function () {
+function openSermonEditor(sermon = null) {
 
-            openSermonEditor();
+    const title =
+        getElement("editor-title");
 
-        });
+    const form =
+        getElement("editor-form");
 
-    }
 
+    if (!title || !form) return;
 
-    function openSermonEditor(sermon = null) {
 
-        const modal = document.getElementById("editor-modal");
-        const title = document.getElementById("editor-title");
-        const form = document.getElementById("editor-form");
+    title.textContent =
+        sermon ? "Edit Sermon" : "Add Sermon";
 
-        if (!modal || !form) return;
 
+    form.dataset.type = "sermon";
 
-        title.textContent = sermon
-            ? "Edit Sermon"
-            : "Add Sermon";
+    form.dataset.id =
+        sermon ? sermon.id : "";
 
 
-        form.innerHTML = `
+    form.innerHTML = `
 
-            <label>Sermon Title</label>
+        <label>Sermon Title</label>
 
-            <input
-                type="text"
-                id="editor-sermon-title"
-                required
-                placeholder="Sermon title"
-                value="${sermon ? escapeAttribute(sermon.title) : ""}"
-            >
+        <input
+            id="editor-sermon-title"
+            required
+            value="${sermon ? escapeAttribute(sermon.title) : ""}"
+            placeholder="Enter sermon title"
+        >
 
+        <label>Description</label>
 
-            <label>Description</label>
+        <textarea
+            id="editor-sermon-description"
+            rows="4"
+            required
+            placeholder="Enter sermon description"
+        >${sermon ? escapeHTML(sermon.description) : ""}</textarea>
 
-            <textarea
-                id="editor-sermon-description"
-                rows="4"
-                required
-                placeholder="Sermon description..."
-            >${sermon ? escapeHTML(sermon.description) : ""}</textarea>
+        <label>Sermon Link</label>
 
+        <input
+            id="editor-sermon-link"
+            value="${sermon ? escapeAttribute(sermon.link || "") : ""}"
+            placeholder="https://youtube.com/..."
+        >
 
-            <label>Sermon Video Link</label>
+        <button
+            type="submit"
+            class="form-btn"
+        >
+            ${sermon ? "Update Sermon" : "Add Sermon"}
+        </button>
 
-            <input
-                type="url"
-                id="editor-sermon-link"
-                required
-                placeholder="https://youtube.com/..."
-                value="${sermon ? escapeAttribute(sermon.link) : ""}"
-            >
+        <p
+            class="form-message"
+            id="editor-message"
+        ></p>
 
+    `;
 
-            <button
-                class="form-btn"
-                type="submit">
-                ${sermon ? "Save Changes" : "Add Sermon"}
-            </button>
 
-            <p
-                class="form-message"
-                id="editor-message">
-            </p>
-        `;
+    openModal("editor-modal");
 
+}
 
-        form.onsubmit = function (e) {
 
-            e.preventDefault();
+/* =========================================================
+   EDIT SERMON
+========================================================= */
 
+function editSermon(id) {
 
-            const sermonData = {
+    const sermon =
+        data.sermons.find(function (item) {
 
-                title: document
-                    .getElementById("editor-sermon-title")
-                    .value
-                    .trim(),
-
-                description: document
-                    .getElementById("editor-sermon-description")
-                    .value
-                    .trim(),
-
-                link: document
-                    .getElementById("editor-sermon-link")
-                    .value
-                    .trim()
-
-            };
-
-
-            if (sermon) {
-
-                sermons = sermons.map(function (item) {
-
-                    if (item.id === sermon.id) {
-
-                        return {
-                            ...item,
-                            ...sermonData
-                        };
-
-                    }
-
-                    return item;
-
-                });
-
-            } else {
-
-                sermonData.id = Date.now();
-
-                sermons.push(sermonData);
-
-            }
-
-
-            saveData("churchSermons", sermons);
-
-            renderSermons();
-            renderAdminSermons();
-
-            closeModal("editor-modal");
-
-        };
-
-
-        openModal("editor-modal");
-
-    }
-
-
-    window.editSermon = function (id) {
-
-        const sermon = sermons.find(function (item) {
-            return item.id === id;
-        });
-
-        if (sermon) {
-            openSermonEditor(sermon);
-        }
-
-    };
-
-
-    window.deleteSermon = function (id) {
-
-        const sermon = sermons.find(function (item) {
-            return item.id === id;
-        });
-
-        if (!sermon) return;
-
-
-        const confirmed = confirm(
-            `Delete "${sermon.title}"?`
-        );
-
-
-        if (!confirmed) return;
-
-
-        sermons = sermons.filter(function (item) {
-            return item.id !== id;
-        });
-
-
-        saveData("churchSermons", sermons);
-
-        renderSermons();
-        renderAdminSermons();
-
-    };
-
-
-    /* =====================================================
-       CONTACTS
-    ===================================================== */
-
-    const contactsList = document.getElementById("contacts-list");
-    const contactsForm = document.getElementById("contacts-form");
-
-
-    function renderContacts() {
-
-        if (!contactsList) return;
-
-
-        contactsList.innerHTML = `
-
-            <div class="contact-person">
-
-                <div>
-                    <strong>
-                        ${escapeHTML(contacts.pastorName)}
-                    </strong>
-
-                    <span>
-                        Lead Pastor
-                    </span>
-                </div>
-
-                <a href="tel:${phoneValue(contacts.pastorPhone)}">
-                    ${escapeHTML(contacts.pastorPhone)}
-                </a>
-
-            </div>
-
-
-            <div class="contact-person">
-
-                <div>
-                    <strong>
-                        ${escapeHTML(contacts.secondName)}
-                    </strong>
-
-                    <span>
-                        Pastor
-                    </span>
-                </div>
-
-                <a href="tel:${phoneValue(contacts.secondPhone)}">
-                    ${escapeHTML(contacts.secondPhone)}
-                </a>
-
-            </div>
-
-
-            <div class="contact-person">
-
-                <div>
-                    <strong>
-                        ${escapeHTML(contacts.thirdName)}
-                    </strong>
-
-                    <span>
-                        Pastor
-                    </span>
-                </div>
-
-                <a href="tel:${phoneValue(contacts.thirdPhone)}">
-                    ${escapeHTML(contacts.thirdPhone)}
-                </a>
-
-            </div>
-
-        `;
-
-    }
-
-
-    function loadContactsForm() {
-
-        if (!contactsForm) return;
-
-
-        document.getElementById("admin-location").value =
-            contacts.location;
-
-        document.getElementById("admin-email").value =
-            contacts.email;
-
-        document.getElementById("admin-pastor-name").value =
-            contacts.pastorName;
-
-        document.getElementById("admin-pastor-phone").value =
-            contacts.pastorPhone;
-
-        document.getElementById("admin-second-name").value =
-            contacts.secondName;
-
-        document.getElementById("admin-second-phone").value =
-            contacts.secondPhone;
-
-        document.getElementById("admin-third-name").value =
-            contacts.thirdName;
-
-        document.getElementById("admin-third-phone").value =
-            contacts.thirdPhone;
-
-    }
-
-
-    if (contactsForm) {
-
-        contactsForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            contacts = {
-
-                location:
-                    document.getElementById("admin-location").value.trim(),
-
-                email:
-                    document.getElementById("admin-email").value.trim(),
-
-                pastorName:
-                    document.getElementById("admin-pastor-name").value.trim(),
-
-                pastorPhone:
-                    document.getElementById("admin-pastor-phone").value.trim(),
-
-                secondName:
-                    document.getElementById("admin-second-name").value.trim(),
-
-                secondPhone:
-                    document.getElementById("admin-second-phone").value.trim(),
-
-                thirdName:
-                    document.getElementById("admin-third-name").value.trim(),
-
-                thirdPhone:
-                    document.getElementById("admin-third-phone").value.trim()
-
-            };
-
-
-            saveData("churchContacts", contacts);
-
-            renderContacts();
-            updateContactInformation();
-
-
-            const message =
-                document.getElementById("contacts-message");
-
-            message.textContent =
-                "Contact information saved successfully.";
-
-            setTimeout(function () {
-                message.textContent = "";
-            }, 3000);
-
-        });
-
-    }
-
-
-    function updateContactInformation() {
-
-        const location =
-            document.getElementById("church-location");
-
-        const email =
-            document.getElementById("church-email");
-
-        const emailButton =
-            document.getElementById("email-button");
-
-
-        if (location) {
-            location.textContent = contacts.location;
-        }
-
-
-        if (email) {
-            email.textContent = contacts.email;
-        }
-
-
-        if (emailButton) {
-            emailButton.href =
-                "mailto:" + contacts.email;
-        }
-
-    }
-
-
-    /* =====================================================
-       GIVING INFORMATION
-    ===================================================== */
-
-    const givingForm =
-        document.getElementById("giving-form");
-
-
-    function loadGivingForm() {
-
-        if (!givingForm) return;
-
-
-        document.getElementById("admin-support-name").value =
-            giving.supportName;
-
-        document.getElementById("admin-mtn-number").value =
-            giving.mtnNumber;
-
-        document.getElementById("admin-mtn-account").value =
-            giving.mtnAccount;
-
-        document.getElementById("admin-airtel-number").value =
-            giving.airtelNumber;
-
-        document.getElementById("admin-airtel-account").value =
-            giving.airtelAccount;
-
-    }
-
-
-    if (givingForm) {
-
-        givingForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            giving = {
-
-                supportName:
-                    document.getElementById("admin-support-name").value.trim(),
-
-                mtnNumber:
-                    document.getElementById("admin-mtn-number").value.trim(),
-
-                mtnAccount:
-                    document.getElementById("admin-mtn-account").value.trim(),
-
-                airtelNumber:
-                    document.getElementById("admin-airtel-number").value.trim(),
-
-                airtelAccount:
-                    document.getElementById("admin-airtel-account").value.trim()
-
-            };
-
-
-            saveData("churchGiving", giving);
-
-            updateGivingInformation();
-
-
-            const message =
-                document.getElementById("giving-message");
-
-            message.textContent =
-                "Giving information saved successfully.";
-
-            setTimeout(function () {
-                message.textContent = "";
-            }, 3000);
-
-        });
-
-    }
-
-
-    function updateGivingInformation() {
-
-        const supportName =
-            document.getElementById("support-name");
-
-        const mtnNumber =
-            document.getElementById("mtn-number");
-
-        const mtnAccount =
-            document.getElementById("mtn-account");
-
-        const airtelNumber =
-            document.getElementById("airtel-number");
-
-        const airtelAccount =
-            document.getElementById("airtel-account");
-
-
-        if (supportName) {
-            supportName.textContent =
-                giving.supportName;
-        }
-
-
-        if (mtnNumber) {
-
-            mtnNumber.textContent =
-                formatPhone(giving.mtnNumber);
-
-            mtnNumber.href =
-                "tel:" + phoneValue(giving.mtnNumber);
-
-        }
-
-
-        if (mtnAccount) {
-            mtnAccount.textContent =
-                giving.mtnAccount;
-        }
-
-
-        if (airtelNumber) {
-
-            airtelNumber.textContent =
-                formatPhone(giving.airtelNumber);
-
-            airtelNumber.href =
-                "tel:" + phoneValue(giving.airtelNumber);
-
-        }
-
-
-        if (airtelAccount) {
-            airtelAccount.textContent =
-                giving.airtelAccount;
-        }
-
-    }
-
-
-    /* =====================================================
-       SUPPORT FORM
-    ===================================================== */
-
-    const supportButton =
-        document.getElementById("open-support-form");
-
-    const supportForm =
-        document.getElementById("support-form");
-
-
-    if (supportButton) {
-
-        supportButton.addEventListener("click", function () {
-            openModal("support-modal");
-        });
-
-    }
-
-
-    if (supportForm) {
-
-        supportForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById("giver-name").value.trim();
-
-            const phone =
-                document.getElementById("giver-phone").value.trim();
-
-            const amount =
-                document.getElementById("support-amount").value;
-
-            const network =
-                document.getElementById("support-network").value;
-
-            const note =
-                document.getElementById("support-note").value.trim();
-
-            const proofInput =
-                document.getElementById("support-proof");
-
-
-            let proofName = "";
-
-            if (
-                proofInput &&
-                proofInput.files &&
-                proofInput.files.length > 0
-            ) {
-
-                proofName =
-                    proofInput.files[0].name;
-
-            }
-
-
-            const submission = {
-
-                id: Date.now(),
-
-                name: name,
-
-                phone: phone,
-
-                amount: Number(amount),
-
-                network: network,
-
-                note: note,
-
-                proofName: proofName,
-
-                status: "Pending",
-
-                date: new Date().toLocaleString()
-
-            };
-
-
-            submissions.push(submission);
-
-            saveData(
-                "churchSupportSubmissions",
-                submissions
-            );
-
-
-            const message =
-                document.getElementById("support-message");
-
-            message.textContent =
-                "Thank you. Your support has been submitted successfully.";
-
-            message.style.color = "#238636";
-
-
-            renderSupportSubmissions();
-
-
-            setTimeout(function () {
-
-                supportForm.reset();
-
-                closeModal("support-modal");
-
-                message.textContent = "";
-
-            }, 1800);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       SUPPORT SUBMISSIONS / ADMIN
-    ===================================================== */
-
-    const submissionsList =
-        document.getElementById("support-submissions-list");
-
-
-    function renderSupportSubmissions() {
-
-        if (!submissionsList) return;
-
-
-        if (submissions.length === 0) {
-
-            submissionsList.innerHTML = `
-                <div class="empty">
-
-                    <h3>No Support Submissions</h3>
-
-                    <p>
-                        Support records submitted by visitors
-                        will appear here.
-                    </p>
-
-                </div>
-            `;
-
-            return;
-        }
-
-
-        submissionsList.innerHTML =
-            submissions
-                .slice()
-                .reverse()
-                .map(function (submission) {
-
-                    const statusClass =
-                        submission.status === "Received"
-                            ? "received"
-                            : "pending";
-
-
-                    return `
-
-                        <div class="admin-item">
-
-                            <div>
-
-                                <h4>
-                                    ${escapeHTML(submission.name)}
-                                </h4>
-
-                                <p>
-                                    <strong>
-                                        UGX ${Number(submission.amount).toLocaleString()}
-                                    </strong>
-                                </p>
-
-                                <p>
-                                    Phone:
-                                    ${escapeHTML(submission.phone)}
-                                </p>
-
-                                <p>
-                                    Network:
-                                    ${escapeHTML(submission.network)}
-                                </p>
-
-                                <p>
-                                    Date:
-                                    ${escapeHTML(submission.date)}
-                                </p>
-
-                                ${
-                                    submission.proofName
-                                    ? `
-                                        <p>
-                                            Proof:
-                                            ${escapeHTML(submission.proofName)}
-                                        </p>
-                                    `
-                                    : `
-                                        <p>
-                                            Proof:
-                                            Not uploaded
-                                        </p>
-                                    `
-                                }
-
-                                ${
-                                    submission.note
-                                    ? `
-                                        <p>
-                                            Note:
-                                            ${escapeHTML(submission.note)}
-                                        </p>
-                                    `
-                                    : ""
-                                }
-
-                                <span class="status ${statusClass}">
-                                    ${escapeHTML(submission.status)}
-                                </span>
-
-                            </div>
-
-
-                            <div class="item-actions">
-
-                                ${
-                                    submission.status !== "Received"
-                                    ? `
-                                        <button
-                                            class="received-btn"
-                                            onclick="markSupportReceived(${submission.id})">
-                                            Received
-                                        </button>
-                                    `
-                                    : `
-                                        <button
-                                            class="edit-btn"
-                                            disabled>
-                                            ✓ Received
-                                        </button>
-                                    `
-                                }
-
-
-                                <button
-                                    class="delete-btn"
-                                    onclick="deleteSupportSubmission(${submission.id})">
-                                    Delete
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    `;
-
-                })
-                .join("");
-
-    }
-
-
-    window.markSupportReceived = function (id) {
-
-        submissions = submissions.map(function (submission) {
-
-            if (submission.id === id) {
-
-                return {
-                    ...submission,
-                    status: "Received"
-                };
-
-            }
-
-            return submission;
+            return item.id == id;
 
         });
 
 
-        saveData(
-            "churchSupportSubmissions",
-            submissions
-        );
+    if (sermon) {
+
+        openSermonEditor(sermon);
+
+    }
+
+}
 
 
-        renderSupportSubmissions();
+/* =========================================================
+   DELETE SERMON
+========================================================= */
 
-    };
+function deleteSermon(id) {
 
+    if (!confirm("Delete this sermon?")) {
 
-    window.deleteSupportSubmission = function (id) {
+        return;
 
-        const confirmed =
-            confirm("Delete this support record?");
-
-
-        if (!confirmed) return;
-
-
-        submissions =
-            submissions.filter(function (submission) {
-
-                return submission.id !== id;
-
-            });
+    }
 
 
-        saveData(
-            "churchSupportSubmissions",
-            submissions
-        );
+    data.sermons =
+        data.sermons.filter(function (sermon) {
+
+            return sermon.id != id;
+
+        });
 
 
-        renderSupportSubmissions();
-
-    };
-
-
-    /* =====================================================
-       INITIAL WEBSITE RENDER
-    ===================================================== */
-
-    renderEvents();
+    saveData();
 
     renderSermons();
 
-    renderContacts();
+    renderAdminSermons();
 
-    renderSupportSubmissions();
-
-    updateContactInformation();
-
-    updateGivingInformation();
+}
 
 
-    /* =====================================================
-       ESCAPE HTML - SECURITY
-    ===================================================== */
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
 
-    function escapeHTML(value) {
+function renderContacts() {
 
-        if (value === undefined || value === null) {
-            return "";
-        }
+    const location =
+        getElement("church-location");
+
+    const email =
+        getElement("church-email");
 
 
-        return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+    if (location) {
+
+        location.textContent =
+            data.contacts.location;
 
     }
 
 
-    function escapeAttribute(value) {
-        return escapeHTML(value);
-    }
+    if (email) {
 
-
-    /* =====================================================
-       SAFE LINKS
-    ===================================================== */
-
-    function safeLink(link) {
-
-        if (!link) {
-            return "#";
-        }
-
-
-        const value = String(link).trim();
-
-
-        if (
-            value.startsWith("#") ||
-            value.startsWith("/") ||
-            value.startsWith("https://") ||
-            value.startsWith("http://")
-        ) {
-
-            return escapeAttribute(value);
-
-        }
-
-
-        return "#";
+        email.textContent =
+            data.contacts.email;
 
     }
 
 
-    /* =====================================================
-       PHONE FUNCTIONS
-    ===================================================== */
+    const container =
+        getElement("contacts-list");
 
-    function phoneValue(phone) {
-
-        if (!phone) {
-            return "";
-        }
+    if (!container) return;
 
 
-        return String(phone)
-            .replace(/[^\d+]/g, "");
+    container.innerHTML = `
 
-    }
+        <div class="contact-person">
 
+            <div>
 
-    function formatPhone(phone) {
+                <strong>
+                    ${escapeHTML(data.contacts.pastorName)}
+                </strong>
 
-        if (!phone) {
-            return "";
-        }
+                <span>
+                    Lead Pastor
+                </span>
 
+            </div>
 
-        const digits =
-            String(phone).replace(/\D/g, "");
+            <a href="tel:${escapeAttribute(data.contacts.pastorPhone)}">
+                ${escapeHTML(data.contacts.pastorPhone)}
+            </a>
 
-
-        if (digits.length === 10) {
-
-            return digits.substring(0, 4)
-                + " "
-                + digits.substring(4, 7)
-                + " "
-                + digits.substring(7);
-
-        }
+        </div>
 
 
-        return phone;
+        <div class="contact-person">
 
-    }
+            <div>
+
+                <strong>
+                    ${escapeHTML(data.contacts.secondName)}
+                </strong>
+
+                <span>
+                    Pastor
+                </span>
+
+            </div>
+
+            <a href="tel:${escapeAttribute(data.contacts.secondPhone)}">
+                ${escapeHTML(data.contacts.secondPhone)}
+            </a>
+
+        </div>
 
 
-    /* =====================================================
-       CLOSE MODALS WITH ESCAPE KEY
-    ===================================================== */
+        <div class="contact-person">
 
-    document.addEventListener("keydown", function (event) {
+            <div>
 
-        if (event.key === "Escape") {
+                <strong>
+                    ${escapeHTML(data.contacts.thirdName)}
+                </strong>
 
-            document
-                .querySelectorAll(".modal.show")
-                .forEach(function (modal) {
+                <span>
+                    Pastor
+                </span>
 
-                    modal.classList.remove("show");
+            </div>
 
-                });
+            <a href="tel:${escapeAttribute(data.contacts.thirdPhone)}">
+                ${escapeHTML(data.contacts.thirdPhone)}
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   LOAD CONTACT FORM
+========================================================= */
+
+function loadContactForm() {
+
+    const fields = {
+
+        "admin-location":
+            data.contacts.location,
+
+        "admin-email":
+            data.contacts.email,
+
+        "admin-pastor-name":
+            data.contacts.pastorName,
+
+        "admin-pastor-phone":
+            data.contacts.pastorPhone,
+
+        "admin-second-name":
+            data.contacts.secondName,
+
+        "admin-second-phone":
+            data.contacts.secondPhone,
+
+        "admin-third-name":
+            data.contacts.thirdName
+
+    };
+
+
+    Object.keys(fields).forEach(function (id) {
+
+        const element =
+            getElement(id);
+
+        if (element) {
+
+            element.value =
+                fields[id];
 
         }
 
     });
 
-});
+}
+
+
+/* =========================================================
+   GIVING INFORMATION
+========================================================= */
+
+function renderGiving() {
+
+    const supportName =
+        getElement("support-name");
+
+    const mtnNumber =
+        getElement("mtn-number");
+
+    const mtnAccount =
+        getElement("mtn-account");
+
+    const airtelNumber =
+        getElement("airtel-number");
+
+    const airtelAccount =
+        getElement("airtel-account");
+
+
+    if (supportName) {
+
+        supportName.textContent =
+            data.giving.supportName;
+
+    }
+
+
+    if (mtnNumber) {
+
+        mtnNumber.textContent =
+            formatPhone(data.giving.mtnNumber);
+
+        mtnNumber.href =
+            "tel:" + data.giving.mtnNumber;
+
+    }
+
+
+    if (mtnAccount) {
+
+        mtnAccount.textContent =
+            data.giving.mtnAccount;
+
+    }
+
+
+    if (airtelNumber) {
+
+        airtelNumber.textContent =
+            formatPhone(data.giving.airtelNumber);
+
+        airtelNumber.href =
+            "tel:" + data.giving.airtelNumber;
+
+    }
+
+
+    if (airtelAccount) {
+
+        airtelAccount.textContent =
+            data.giving.airtelAccount;
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD GIVING FORM
+========================================================= */
+
+function loadGivingForm() {
+
+    const fields = {
+
+        "admin-support-name":
+            data.giving.supportName,
+
+        "admin-mtn-number":
+            data.giving.mtnNumber,
+
+        "admin-mtn-account":
+            data.giving.mtnAccount,
+
+        "admin-airtel-number":
+            data.giving.airtelNumber,
+
+        "admin-airtel-account":
+            data.giving.airtelAccount
+
+    };
+
+
+    Object.keys(fields).forEach(function (id) {
+
+        const element =
+            getElement(id);
+
+        if (element) {
+
+            element.value =
+                fields[id];
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   SUPPORT SUBMISSIONS
+========================================================= */
+
+function renderSupportSubmissions() {
+
+    const container =
+        getElement("support-submissions-list");
+
+    if (!container) return;
+
+
+    if (!data.submissions.length) {
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                No support submissions yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        data.submissions.map(function (submission) {
+
+            const statusClass =
+                submission.status === "Received"
+                    ? "received"
+                    : "pending";
+
+
+            return `
+
+                <div class="admin-item">
+
+                    <div>
+
+                        <h4>
+                            ${escapeHTML(submission.name)}
+                        </h4>
+
+                        <p>
+                            <strong>Phone:</strong>
+                            ${escapeHTML(submission.phone)}
+                        </p>
+
+                        <p>
+                            <strong>Amount:</strong>
+                            UGX ${escapeHTML(submission.amount)}
+                        </p>
+
+                        <p>
+                            <strong>Network:</strong>
+                            ${escapeHTML(submission.network)}
+                        </p>
+
+                        <p>
+                            <strong>Date:</strong>
+                            ${escapeHTML(submission.date)}
+                        </p>
+
+                        ${
+                            submission.proof
+                            ?
+                            `<p><strong>Proof:</strong> ${escapeHTML(submission.proof)}</p>`
+                            :
+                            `<p><strong>Proof:</strong> Not uploaded</p>`
+                        }
+
+                        ${
+                            submission.note
+                            ?
+                            `<p><strong>Note:</strong> ${escapeHTML(submission.note)}</p>`
+                            :
+                            ""
+                        }
+
+                        <span class="status ${statusClass}">
+                            ${escapeHTML(submission.status)}
+                        </span>
+
+                    </div>
+
+                    <div class="item-actions">
+
+                        ${
+                            submission.status !== "Received"
+                            ?
+                            `
+                            <button
+                                class="received-btn"
+                                onclick="markSupportReceived(${submission.id})"
+                            >
+                                Received
+                            </button>
+                            `
+                            :
+                            ""
+                        }
+
+                        <button
+                            class="delete-btn"
+                            onclick="deleteSupportSubmission(${submission.id})"
+                        >
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   MARK SUPPORT AS RECEIVED
+========================================================= */
+
+function markSupportReceived(id) {
+
+    const submission =
+        data.submissions.find(function (item) {
+
+            return item.id == id;
+
+        });
+
+
+    if (!submission) return;
+
+
+    submission.status = "Received";
+
+
+    saveData();
+
+    renderSupportSubmissions();
+
+}
+
+
+/* =========================================================
+   DELETE SUPPORT RECORD
+========================================================= */
+
+function deleteSupportSubmission(id) {
+
+    if (!confirm("Delete this support record?")) {
+
+        return;
+
+    }
+
+
+    data.submissions =
+        data.submissions.filter(function (submission) {
+
+            return submission.id != id;
+
+        });
+
+
+    saveData();
+
+    renderSupportSubmissions();
+
+}
+
+
+/* =========================================================
+   PHONE FORMAT
+========================================================= */
+
+function formatPhone(phone) {
+
+    if (!phone) return "";
+
+    const clean =
+        phone.replace(/\D/g, "");
+
+    if (clean.length === 10) {
+
+        return (
+            clean.substring(0, 4) +
+            " " +
+            clean.substring(4, 7) +
+            " " +
+            clean.substring(7)
+        );
+
+    }
+
+    return phone;
+
+}
+
+
+/* =========================================================
+   SECURITY / HTML ESCAPING
+========================================================= */
+
+function escapeHTML(value) {
+
+    if (value === undefined || value === null) {
+
+        return "";
+
+    }
+
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+function escapeAttribute(value) {
+
+    return escapeHTML(value);
+
+}
+
+
+/* =========================================================
+   MAKE FUNCTIONS AVAILABLE TO HTML ONCLICK
+========================================================= */
+
+window.editEvent =
+    editEvent;
+
+window.deleteEvent =
+    deleteEvent;
+
+window.editSermon =
+    editSermon;
+
+window.deleteSermon =
+    deleteSermon;
+
+window.markSupportReceived =
+    markSupportReceived;
+
+window.deleteSupportSubmission =
+    deleteSupportSubmission;
+
+window.openModal =
+    openModal;
+
+window.closeModal =
+    closeModal;
+
+window.openAdminPanel =
+    openAdminPanel;
+
+window.closeAdminPanel =
+    closeAdminPanel;
