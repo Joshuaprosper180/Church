@@ -3,503 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Seeta Revival Church</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
-    <div class="logo">Seeta Revival Church</div>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">☰</button>
+
+    <div class="logo">
+        Seeta Revival Church
+    </div>
+
+    <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation menu">
+        ☰
+    </button>
+
     <nav id="nav-menu">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#ministries">Ministries</a>
-        <a href="#events">Events</a><a href="#sermons">Sermons</a><a href="#contact">Contact</a>
-        <button class="admin-nav-btn" id="open-login">Admin</button>
-    </nav>
-</header>
 
-<section id="home" class="hero">
- <div class="hero-content">
-  <p class="welcome">WELCOME TO SEETA REVIVAL CHURCH</p>
-  <h1>Encounter God.<br>Experience His Presence.</h1>
-  <p class="hero-description">A place where lives are transformed, faith is strengthened and people encounter the presence of God.</p>
-  <div class="hero-buttons"><a href="#events" class="btn">Upcoming Events</a><a href="#watch-sermons" class="dark-btn hero-dark">Watch Sermons</a></div>
- </div>
-</section>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ministries">Ministries</a>
+        <a href="#events">Events</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#contact">Contact</a>
 
-<section id="about">
- <div class="section-container about-container">
-  <div class="about-text">
-   <p class="section-label">WHO WE ARE</p><h2>A Place To Encounter God</h2>
-   <p>Seeta Revival Church is a community of believers passionate about worship, prayer, the Word of God and transformed lives.</p>
-   <p>We believe that every person can experience the love, grace and transforming power of Jesus Christ.</p>
-   <a href="#contact" class="dark-btn">Visit Us</a>
-  </div>
-  <div class="about-right">
-   <div class="about-box pastor-box"><img src="pastor.jpg" alt="Pastor Daniel Musanje" class="pastor-image"><h3 class="pastor-name">Pr Daniel Musanje</h3><p class="pastor-title">Lead Pastor</p></div>
-   <div class="about-box vision-box"><h3>Our Vision</h3><p>Bringing Revival to all through the Gospel by Preaching, Teaching and Actionalising the Word till the End.</p><h3>Our Mission</h3><p>Spiritual Revival to bring a Physical Revival, attained through Prayer, Fasting & Reading of Scriptures to cause Change.</p><h3>Our Slogan</h3><p>Begin with the Spirit at the Prayer Tent.</p></div>
-  </div>
- </div>
-</section>
-
-<section id="ministries"><div class="section-container center">
- <p class="section-label">GET CONNECTED</p><h2 class="section-title">Our Ministries</h2><p class="section-description">There is a place for everyone to grow, serve and become part of what God is doing.</p>
- <div class="ministries-container">
-  <div class="ministry"><div class="ministry-icon">🎵</div><h3>Worship Ministry</h3><p>Leading God's people into His presence through worship.</p></div>
-  <div class="ministry"><div class="ministry-icon">🙌</div><h3>Youth Ministry</h3><p>Equipping young people to live passionately for Christ.</p></div>
-  <div class="ministry"><div class="ministry-icon">❤️</div><h3>Children's Ministry</h3><p>Helping children grow in the knowledge and love of God.</p></div>
-  <div class="ministry"><div class="ministry-icon">🙏</div><h3>Prayer Ministry</h3><p>Standing together in prayer and intercession.</p></div>
- </div>
-</div></section>
-
-<section id="events"><div class="section-container">
- <div class="events-heading"><div><p class="section-label">STAY CONNECTED</p><h2>Upcoming Events</h2><p>Join us for worship services, prayer meetings, conferences and other life-changing events.</p></div></div>
- <div class="events-grid" id="events-list"></div>
-</div></section>
-
-<section id="sermons"><div class="section-container center">
- <p class="section-label">BE ENCOURAGED</p><h2 class="section-title">Latest Sermons</h2><p class="section-description">Watch and listen to inspiring messages from Seeta Revival Church.</p>
- <div class="sermons-grid" id="sermons-list"></div>
-</div></section>
-
-<section id="watch-sermons" class="watch-platforms"><div class="section-container center">
- <p class="section-label">WATCH & BE BLESSED</p><h2 class="section-title">Choose Your Platform</h2><p class="section-description">Watch sermons, teachings and powerful messages from Seeta Revival Church on your favourite platform.</p>
- <div class="platform-container">
-  <a href="https://youtube.com/@seetarevivalchurch-l1b?si=jLZWcvqkJldgZcpQ" target="_blank" rel="noopener noreferrer" class="platform-card youtube-card"><div class="platform-icon">▶</div><h3>YouTube</h3><p>Watch full sermons, teachings and inspiring videos from Seeta Revival Church.</p><div class="platform-link">Watch on YouTube <span>→</span></div></a>
-  <a href="https://www.facebook.com/profile.php?id=100070647061072" target="_blank" rel="noopener noreferrer" class="platform-card facebook-card"><div class="platform-icon facebook-symbol">f</div><h3>Facebook</h3><p>Follow us for sermons, live services, ministry updates and encouraging messages.</p><div class="platform-link">Watch on Facebook <span>→</span></div></a>
-  <a href="https://www.tiktok.com/@seeta.revival.chu?_r=1&_t=ZS-990tiN9DaeD" target="_blank" rel="noopener noreferrer" class="platform-card tiktok-card"><div class="platform-icon">♪</div><h3>TikTok</h3><p>Watch short sermons, encouraging messages and special ministry moments.</p><div class="platform-link">Watch on TikTok <span>→</span></div></a>
- </div>
-</div></section>
-
-<section id="contact"><div class="section-container contact-container">
- <div class="contact-info"><p class="contact-label">GET IN TOUCH</p><h2>We'd Love To Hear From You</h2><p class="contact-intro">Reach out to us, visit us or join us as we worship and grow together.</p>
-  <div class="contact-detail"><span>📍</span><div><h3>Location</h3><p id="church-location">Seeta, Kasangati, Uganda</p></div></div>
-  <div class="contact-detail"><span>📧</span><div><h3>Email</h3><p id="church-email">joshuantale118@gmail.com</p></div></div>
- </div>
- <div class="contact-card"><h3 class="contact-card-title">Church Contacts</h3><div id="contacts-list"></div>
-  <div class="support-box"><div class="support-top"><div class="support-icon">❤️</div><div><p class="support-label">GIVING & SUPPORT</p><h3>Support the Ministry</h3></div></div>
-   <p class="support-text">Your generous support helps us continue spreading the Gospel, transforming lives and advancing God's work.</p>
-   <div class="support-account"><span>Mobile Money Account Name</span><strong id="support-name">Pr Daniel Musanje</strong></div>
-   <div class="payment-option"><div class="payment-header mtn-header"><div class="network-brand"><div class="network-logo mtn-logo">MTN</div><div><span class="network-name">MTN MOBILE MONEY</span><small>Support using MTN MoMo</small></div></div><span class="payment-badge">MTN</span></div><div class="payment-body"><p class="send-label">Send your support to</p><a id="mtn-number" class="payment-number" href="tel:0772314539">0772 314 539</a><p class="account-name" id="mtn-account">Pr Daniel Musanje</p></div></div>
-   <div class="payment-option"><div class="payment-header airtel-header"><div class="network-brand"><div class="network-logo airtel-logo">airtel</div><div><span class="network-name">AIRTEL MONEY</span><small>Support using Airtel Money</small></div></div><span class="payment-badge">AIRTEL</span></div><div class="payment-body"><p class="send-label">Send your support to</p><a id="airtel-number" class="payment-number" href="tel:0752277443">0752 277 443</a><p class="account-name" id="airtel-account">Pr Daniel Musanje</p></div></div>
-   <button class="submit-support-btn" id="open-support-form">❤️ Submit Your Support</button><div class="support-footer"><span>❤️</span><p>Thank you for supporting the work of God. Every contribution makes a difference.</p></div>
-  </div>
-  <a href="mailto:joshuantale118@gmail.com" class="contact-button" id="email-button">Send Us an Email</a>
- </div>
-</div></section>
-
-<footer><div><h3>Seeta Revival Church</h3><p>Encounter God. Experience His Presence.</p></div><p>© 2026 Seeta Revival Church. All Rights Reserved.</p></footer>
-
-<!-- LOGIN MODAL -->
-<div class="modal" id="login-modal"><div class="modal-box small-modal"><button class="close-modal" data-close="login-modal">×</button><h2>Admin Login</h2><p>Manage the church website.</p><form id="login-form"><label>Username</label><input id="login-username" required placeholder="Enter username"><label>Password</label><input type="password" id="login-password" required placeholder="Enter password"><button class="form-btn" type="submit">Login</button><p class="form-message" id="login-message"></p></form><p class="login-note">Default login: <b>admin</b> / <b>church123</b></p></div></div>
-
-<!-- SUPPORT FORM -->
-<div class="modal" id="support-modal"><div class="modal-box"><button class="close-modal" data-close="support-modal">×</button><h2>Submit Your Support</h2><p>Thank you for supporting the work of God.</p><form id="support-form"><div class="form-grid"><div><label>Your Name</label><input id="giver-name" required></div><div><label>Phone Number</label><input id="giver-phone" required></div></div><label>Amount (UGX)</label><input type="number" id="support-amount" required min="1" placeholder="Enter amount"><label>Payment Network</label><select id="support-network"><option>MTN Mobile Money</option><option>Airtel Money</option><option>Other</option></select><label>Upload Proof of Support <span class="optional">(Optional)</span></label><input type="file" id="support-proof" accept="image/*,.pdf"><label>Message / Note <span class="optional">(Optional)</span></label><textarea id="support-note" rows="3"></textarea><button class="form-btn" type="submit">Submit Support</button><p class="form-message" id="support-message"></p></form></div></div>
-
-<!-- ADMIN DASHBOARD -->
-<div class="admin-panel" id="admin-panel">
- <div class="admin-sidebar"><div class="admin-brand">Seeta Revival<br><span>Admin Panel</span></div><button class="admin-tab active" data-tab="admin-events">📅 Events</button><button class="admin-tab" data-tab="admin-sermons">🎥 Sermons</button><button class="admin-tab" data-tab="admin-contacts">📞 Contacts</button><button class="admin-tab" data-tab="admin-support">❤️ Giving</button><button class="admin-tab" data-tab="admin-submissions">💰 Support Records</button><button class="logout-btn" id="logout-btn">Logout</button></div>
- <div class="admin-main"><div class="admin-top"><h2>Church Website Management</h2><button class="close-admin" id="close-admin">×</button></div>
-  <div class="admin-section active" id="admin-events"><div class="admin-section-head"><div><h3>Manage Events</h3><p>Add, edit or delete upcoming events.</p></div><button class="add-btn" id="add-event-btn">+ Add Event</button></div><div id="admin-events-list"></div></div>
-  <div class="admin-section" id="admin-sermons"><div class="admin-section-head"><div><h3>Manage Sermons</h3><p>Add YouTube, Facebook or other sermon links.</p></div><button class="add-btn" id="add-sermon-btn">+ Add Sermon</button></div><div id="admin-sermons-list"></div></div>
-  <div class="admin-section" id="admin-contacts"><h3>Church Contacts</h3><p>Change contact information shown on the website.</p><form id="contacts-form" class="admin-form"><label>Location</label><input id="admin-location"><label>Email</label><input id="admin-email"><label>Lead Pastor Name</label><input id="admin-pastor-name"><label>Lead Pastor Phone</label><input id="admin-pastor-phone"><label>Second Pastor Name</label><input id="admin-second-name"><label>Second Pastor Phone</label><input id="admin-second-phone"><label>Third Pastor Name</label><input id="admin-third-name"><label>Third Pastor Phone</label><button class="form-btn">Save Contacts</button><p class="form-message" id="contacts-message"></p></form></div>
-  <div class="admin-section" id="admin-support"><h3>Giving & Support Information</h3><p>Change the mobile money details displayed to visitors.</p><form id="giving-form" class="admin-form"><label>Account Name</label><input id="admin-support-name"><label>MTN Number</label><input id="admin-mtn-number"><label>MTN Account Name</label><input id="admin-mtn-account"><label>Airtel Number</label><input id="admin-airtel-number"><label>Airtel Account Name</label><input id="admin-airtel-account"><button class="form-btn">Save Giving Details</button><p class="form-message" id="giving-message"></p></form></div>
-  <div class="admin-section" id="admin-submissions"><div class="admin-section-head"><div><h3>Support Submissions</h3><p>Review supporters and mark payments as received.</p></div></div><div id="support-submissions-list"></div></div>
- </div>
-</div>
-
-<!-- EVENT / SERMON EDITOR -->
-<div class="modal" id="editor-modal"><div class="modal-box"><button class="close-modal" data-close="editor-modal">×</button><h2 id="editor-title">Add Event</h2><form id="editor-form"></form></div></div>
-
-<script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Seeta Revival Church</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-
-<body>
-
-    <!-- HEADER -->
-
-    <header>
-
-        <div class="logo">
-            Seeta Revival Church
-        </div>
-
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
-            ☰
+        <button
+            class="admin-nav-btn"
+            id="open-login">
+            Admin
         </button>
 
+    </nav>
 
-        <!-- NAVIGATION -->
-
-        <nav id="nav-menu">
-
-            <a href="#home">Home</a>
-
-            <a href="#about">About</a>
-
-            <a href="#ministries">Ministries</a>
-
-            <a href="#events">Events</a>
-
-            <a href="#sermons">Sermons</a>
-
-            <a href="#contact">Contact</a>
-
-        </nav>
-
-    </header>
+</header>
 
 
+<!-- =====================================================
+     HOME
+===================================================== -->
 
-    <!-- HOME / HERO SECTION -->
+<section id="home" class="hero">
 
-    <section id="home" class="hero">
+    <div class="hero-content">
 
-        <div class="hero-content">
+        <p class="welcome">
+            WELCOME TO SEETA REVIVAL CHURCH
+        </p>
 
-            <p class="welcome">
-                WELCOME TO SEETA REVIVAL CHURCH
-            </p>
+        <h1>
+            Encounter God.<br>
+            Experience His Presence.
+        </h1>
 
+        <p class="hero-description">
+            A place where lives are transformed,
+            faith is strengthened and people encounter
+            the presence of God.
+        </p>
 
-            <h1>
-                Encounter God.<br>
-                Experience His Presence.
-            </h1>
+        <div class="hero-buttons">
 
+            <a href="#events" class="btn">
+                Upcoming Events
+            </a>
 
-            <p class="hero-description">
-
-                A place where lives are transformed,
-                faith is strengthened and people encounter
-                the presence of God.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#events" class="btn">
-                    Upcoming Events
-                </a>
-
-                <a href="#watch-sermons" class="dark-btn">
-    Watch Sermons
-</a>
-                </a>
-
-            </div>
+            <a href="#watch-sermons" class="dark-btn hero-dark">
+                Watch Sermons
+            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-    <!-- ABOUT SECTION -->
+<section id="about">
 
-    <section id="about">
+    <div class="section-container about-container">
 
-        <div class="section-container about-container">
-
-
-            <!-- ABOUT TEXT -->
-
-            <div class="about-text">
-
-                <p class="section-label">
-                    WHO WE ARE
-                </p>
-
-                <h2>
-                    A Place To Encounter God
-                </h2>
-
-
-                <p>
-
-                    Seeta Revival Church is a community of believers
-                    passionate about worship, prayer, the Word of God
-                    and transformed lives.
-
-                </p>
-
-
-                <p>
-
-                    We believe that every person can experience
-                    the love, grace and transforming power of Jesus Christ.
-
-                </p>
-
-
-                <a href="#contact" class="dark-btn">
-                    Visit Us
-                </a>
-
-            </div>
-
-
-
-            <!-- ABOUT BOXES -->
-
-            <div class="about-right">
-
-
-                <!-- PASTOR -->
-
-                <div class="about-box pastor-box">
-
-                    <img
-                        src="pastor.jpg"
-                        alt="Pastor Daniel Musanje"
-                        class="pastor-image"
-                    >
-
-                    <h3 class="pastor-name">
-                        Pr Daniel Musanje
-                    </h3>
-
-                    <p class="pastor-title">
-                        Lead Pastor
-                    </p>
-
-                </div>
-
-
-
-                <!-- VISION / MISSION / SLOGAN -->
-
-                <div class="about-box vision-box">
-
-                    <h3>
-                        Our Vision
-                    </h3>
-
-                    <p>
-                        Bringing Revival to all through the Gospel by Preaching,
-                        Teaching and Actionalising the Word till the End.
-                    </p>
-
-
-                    <h3>
-                        Our Mission
-                    </h3>
-
-                    <p>
-                        Spiritual Revival to bring a Physical Revival,
-                        attained through Prayer, Fasting & Reading of Scriptures
-                        to cause Change.
-                    </p>
-
-
-                    <h3>
-                        Our Slogan
-                    </h3>
-
-                    <p>
-                        Begin with the Spirit at the Prayer Tent.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- MINISTRIES SECTION -->
-
-    <section id="ministries">
-
-        <div class="section-container">
+        <div class="about-text">
 
             <p class="section-label">
-                GET CONNECTED
+                WHO WE ARE
             </p>
 
-            <h2 class="section-title">
-                Our Ministries
+            <h2>
+                A Place To Encounter God
             </h2>
 
-            <p class="section-description">
-
-                There is a place for everyone to grow,
-                serve and become part of what God is doing.
-
+            <p>
+                Seeta Revival Church is a community of believers
+                passionate about worship, prayer, the Word of God
+                and transformed lives.
             </p>
 
+            <p>
+                We believe that every person can experience
+                the love, grace and transforming power of Jesus Christ.
+            </p>
 
-            <div class="ministries-container">
-
-
-                <div class="ministry">
-
-                    <div class="ministry-icon">
-                        🎵
-                    </div>
-
-                    <h3>
-                        Worship Ministry
-                    </h3>
-
-                    <p>
-                        Leading God's people into His presence
-                        through worship.
-                    </p>
-
-                </div>
-
-
-
-                <div class="ministry">
-
-                    <div class="ministry-icon">
-                        🙌
-                    </div>
-
-                    <h3>
-                        Youth Ministry
-                    </h3>
-
-                    <p>
-                        Equipping young people to live
-                        passionately for Christ.
-                    </p>
-
-                </div>
-
-
-
-                <div class="ministry">
-
-                    <div class="ministry-icon">
-                        ❤️
-                    </div>
-
-                    <h3>
-                        Children's Ministry
-                    </h3>
-
-                    <p>
-                        Helping children grow in the
-                        knowledge and love of God.
-                    </p>
-
-                </div>
-
-
-
-                <div class="ministry">
-
-                    <div class="ministry-icon">
-                        🙏
-                    </div>
-
-                    <h3>
-                        Prayer Ministry
-                    </h3>
-
-                    <p>
-                        Standing together in prayer
-                        and intercession.
-                    </p>
-
-                </div>
-
-
-            </div>
+            <a href="#contact" class="dark-btn">
+                Visit Us
+            </a>
 
         </div>
 
-    </section>
 
+        <div class="about-right">
 
+            <!-- PASTOR -->
 
-    <!-- EVENTS SECTION -->
+            <div class="about-box pastor-box">
 
-    <section id="events">
+                <img
+                    src="pastor.jpg"
+                    alt="Pastor Daniel Musanje"
+                    class="pastor-image"
+                >
 
-        <div class="section-container events-content">
+                <h3 class="pastor-name">
+                    Pr Daniel Musanje
+                </h3>
 
-
-            <div>
-
-                <p class="section-label">
-                    STAY CONNECTED
-                </p>
-
-                <h2>
-                    Upcoming Events
-                </h2>
-
-                <p>
-
-                    Join us for worship services, prayer meetings,
-                    conferences and other life-changing events.
-
+                <p class="pastor-title">
+                    Lead Pastor
                 </p>
 
             </div>
 
 
+            <!-- VISION -->
 
-            <div class="event-card">
-
-                <p class="event-date">
-                    28 AUGUST 2026
-                </p>
+            <div class="about-box vision-box">
 
                 <h3>
-                    Worship Night
+                    Our Vision
                 </h3>
 
                 <p>
-                    An evening of worship, prayer and
-                    encountering the presence of God.
+                    Bringing Revival to all through the Gospel by
+                    Preaching, Teaching and Actionalising the Word
+                    till the End.
                 </p>
 
-                <a href="#contact" class="event-btn">
-                    Learn More
-                </a>
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    Spiritual Revival to bring a Physical Revival,
+                    attained through Prayer, Fasting & Reading of
+                    Scriptures to cause Change.
+                </p>
+
+                <h3>
+                    Our Slogan
+                </h3>
+
+                <p>
+                    Begin with the Spirit at the Prayer Tent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MINISTRIES
+===================================================== -->
+
+<section id="ministries">
+
+    <div class="section-container center">
+
+        <p class="section-label">
+            GET CONNECTED
+        </p>
+
+        <h2 class="section-title">
+            Our Ministries
+        </h2>
+
+        <p class="section-description">
+            There is a place for everyone to grow,
+            serve and become part of what God is doing.
+        </p>
+
+
+        <div class="ministries-container">
+
+            <div class="ministry">
+
+                <div class="ministry-icon">
+                    🎵
+                </div>
+
+                <h3>
+                    Worship Ministry
+                </h3>
+
+                <p>
+                    Leading God's people into His presence
+                    through worship.
+                </p>
 
             </div>
 
 
+            <div class="ministry">
+
+                <div class="ministry-icon">
+                    🙌
+                </div>
+
+                <h3>
+                    Youth Ministry
+                </h3>
+
+                <p>
+                    Equipping young people to live
+                    passionately for Christ.
+                </p>
+
+            </div>
+
+
+            <div class="ministry">
+
+                <div class="ministry-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Children's Ministry
+                </h3>
+
+                <p>
+                    Helping children grow in the
+                    knowledge and love of God.
+                </p>
+
+            </div>
+
+
+            <div class="ministry">
+
+                <div class="ministry-icon">
+                    🙏
+                </div>
+
+                <h3>
+                    Prayer Ministry
+                </h3>
+
+                <p>
+                    Standing together in prayer
+                    and intercession.
+                </p>
+
+            </div>
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-<!-- =========================
-     SERMONS SECTION
-========================= -->
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section id="events">
+
+    <div class="section-container">
+
+        <div class="events-heading">
+
+            <p class="section-label">
+                STAY CONNECTED
+            </p>
+
+            <h2>
+                Upcoming Events
+            </h2>
+
+            <p>
+                Join us for worship services, prayer meetings,
+                conferences and other life-changing events.
+            </p>
+
+        </div>
+
+
+        <!-- JavaScript will load events here -->
+
+        <div
+            class="events-grid"
+            id="events-list">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERMONS
+===================================================== -->
 
 <section id="sermons">
 
-    <div class="section-container">
+    <div class="section-container center">
 
         <p class="section-label">
             BE ENCOURAGED
@@ -515,31 +351,11 @@
         </p>
 
 
-        <div class="sermon-box">
+        <!-- JavaScript will load sermons here -->
 
-            <div class="sermon-icon">
-                ▶
-            </div>
-
-
-            <div class="sermon-content">
-
-                <h3>
-                    Messages That Transform Lives
-                </h3>
-
-                <p>
-                    Watch powerful teachings and sermons that
-                    will strengthen your faith.
-                </p>
-
-            </div>
-
-
-            <a href="#watch-sermons" class="dark-btn sermon-button">
-                Watch Sermons
-            </a>
-
+        <div
+            class="sermons-grid"
+            id="sermons-list">
         </div>
 
     </div>
@@ -547,14 +363,15 @@
 </section>
 
 
+<!-- =====================================================
+     WATCH SERMONS
+===================================================== -->
 
-<!-- =========================
-     WATCH SERMONS PLATFORMS
-========================= -->
+<section
+    id="watch-sermons"
+    class="watch-platforms">
 
-<section id="watch-sermons" class="watch-platforms">
-
-    <div class="section-container">
+    <div class="section-container center">
 
         <p class="section-label">
             WATCH & BE BLESSED
@@ -565,108 +382,95 @@
         </h2>
 
         <p class="section-description">
-            Watch sermons, teachings and powerful messages from
-            Seeta Revival Church on your favourite platform.
+            Watch sermons, teachings and powerful messages
+            from Seeta Revival Church on your favourite platform.
         </p>
 
 
         <div class="platform-container">
 
-
             <!-- YOUTUBE -->
 
-            <a href="https://youtube.com/@seetarevivalchurch-l1b?si=jLZWcvqkJldgZcpQ"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="platform-card youtube-card">
+            <a
+                href="https://youtube.com/@seetarevivalchurch-l1b?si=jLZWcvqkJldgZcpQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="platform-card youtube-card">
 
                 <div class="platform-icon">
                     ▶
                 </div>
 
-
                 <h3>
                     YouTube
                 </h3>
-
 
                 <p>
                     Watch full sermons, teachings and inspiring
                     videos from Seeta Revival Church.
                 </p>
 
-
                 <div class="platform-link">
-                    <span>Watch on YouTube</span>
-                    <span class="arrow">→</span>
+                    Watch on YouTube →
                 </div>
 
             </a>
 
 
-
             <!-- FACEBOOK -->
 
-            <a href="https://www.facebook.com/profile.php?id=100070647061072"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="platform-card facebook-card">
+            <a
+                href="https://www.facebook.com/profile.php?id=100070647061072"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="platform-card facebook-card">
 
                 <div class="platform-icon facebook-symbol">
                     f
                 </div>
 
-
                 <h3>
                     Facebook
                 </h3>
-
 
                 <p>
                     Follow us for sermons, live services,
                     ministry updates and encouraging messages.
                 </p>
 
-
                 <div class="platform-link">
-                    <span>Watch on Facebook</span>
-                    <span class="arrow">→</span>
+                    Watch on Facebook →
                 </div>
 
             </a>
 
 
-
             <!-- TIKTOK -->
 
-            <a href="https://www.tiktok.com/@seeta.revival.chu?_r=1&_t=ZS-990tiN9DaeD"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="platform-card tiktok-card">
+            <a
+                href="https://www.tiktok.com/@seeta.revival.chu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="platform-card tiktok-card">
 
                 <div class="platform-icon">
                     ♪
                 </div>
 
-
                 <h3>
                     TikTok
                 </h3>
-
 
                 <p>
                     Watch short sermons, encouraging messages
                     and special ministry moments.
                 </p>
 
-
                 <div class="platform-link">
-                    <span>Watch on TikTok</span>
-                    <span class="arrow">→</span>
+                    Watch on TikTok →
                 </div>
 
             </a>
-
 
         </div>
 
@@ -674,444 +478,939 @@
 
 </section>
 
-</section>
-    <!-- CONTACT SECTION -->
 
-    <section id="contact">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
-        <div class="section-container contact-container">
+<section id="contact">
 
-
-            <!-- LEFT SIDE -->
-
-            <div class="contact-info">
-
-                <p class="contact-label">
-                    GET IN TOUCH
-                </p>
-
-                <h2>
-                    We'd Love To Hear From You
-                </h2>
-
-                <p class="contact-intro">
-
-                    Reach out to us, visit us or join us
-                    as we worship and grow together.
-
-                </p>
+    <div class="section-container contact-container">
 
 
-                <div class="contact-detail">
+        <!-- LEFT -->
 
-                    <span>
-                        📍
-                    </span>
+        <div class="contact-info">
 
-                    <div>
+            <p class="contact-label">
+                GET IN TOUCH
+            </p>
 
-                        <h3>
-                            Location
-                        </h3>
+            <h2>
+                We'd Love To Hear From You
+            </h2>
 
-                        <p>
-                            Seeta, Kasangati, Uganda
-                        </p>
-
-                    </div>
-
-                </div>
+            <p class="contact-intro">
+                Reach out to us, visit us or join us
+                as we worship and grow together.
+            </p>
 
 
+            <div class="contact-detail">
 
-                <div class="contact-detail">
+                <span>📍</span>
 
-                    <span>
-                        📧
-                    </span>
+                <div>
 
-                    <div>
+                    <h3>
+                        Location
+                    </h3>
 
-                        <h3>
-                            Email
-                        </h3>
-
-                        <p>
-                            joshuantale118@gmail.com
-                        </p>
-
-                    </div>
+                    <p id="church-location">
+                        Seeta, Kasangati, Uganda
+                    </p>
 
                 </div>
 
             </div>
 
 
+            <div class="contact-detail">
 
-            <!-- RIGHT SIDE -->
+                <span>📧</span>
 
-            <div class="contact-card">
+                <div>
 
-                <h3 class="contact-card-title">
-                    Church Contacts
-                </h3>
+                    <h3>
+                        Email
+                    </h3>
 
-
-                <!-- DANIEL -->
-
-                <div class="contact-person">
-
-                    <div>
-
-                        <strong>
-                            Pr Daniel Musanje
-                        </strong>
-
-                        <span>
-                            Lead Pastor
-                        </span>
-
-                    </div>
-
-                    <a href="tel:0772314539">
-                        0772314539
-                    </a>
-
-                </div>
-
-
-
-                <!-- JOYCE -->
-
-                <div class="contact-person">
-
-                    <div>
-
-                        <strong>
-                            Pr Joyce Musanje
-                        </strong>
-
-                        <span>
-                            Pastor
-                        </span>
-
-                    </div>
-
-                    <a href="tel:0758815389">
-                        0758815389
-                    </a>
-
-                </div>
-
-
-
-                <!-- WASSWA -->
-
-                <div class="contact-person">
-
-                    <div>
-
-                        <strong>
-                            Pr Wasswa James
-                        </strong>
-
-                        <span>
-                            Pastor
-                        </span>
-
-                    </div>
-
-                    <a href="tel:0758428102">
-                        0758428102
-                    </a>
-
-                </div>
-
-
-
-                <!-- SUPPORT THE MINISTRY -->
-
-                <div class="support-box">
-
-
-                    <div class="support-top">
-
-                        <div class="support-icon">
-                            ❤️
-                        </div>
-
-
-                        <div>
-
-                            <p class="support-label">
-                                GIVING & SUPPORT
-                            </p>
-
-                            <h3>
-                                Support the Ministry
-                            </h3>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <p class="support-text">
-
-                        Your generous support helps us continue spreading
-                        the Gospel, transforming lives and advancing God's work.
-
+                    <p id="church-email">
+                        joshuantale118@gmail.com
                     </p>
 
-
-
-                    <div class="support-account">
-
-                        <span>
-                            Mobile Money Account Name
-                        </span>
-
-                        <strong>
-                            Pr Daniel Musanje
-                        </strong>
-
-                    </div>
-
-
-
-                    <!-- MTN MOBILE MONEY -->
-
-                    <div class="payment-option mtn-payment">
-
-
-                        <div class="payment-header mtn-header">
-
-
-                            <div class="network-brand">
-
-
-                                <div class="network-logo mtn-logo">
-                                    MTN
-                                </div>
-
-
-                                <div>
-
-                                    <span class="network-name">
-                                        MTN MOBILE MONEY
-                                    </span>
-
-                                    <small>
-                                        Support using MTN MoMo
-                                    </small>
-
-                                </div>
-
-
-                            </div>
-
-
-                            <span class="payment-badge">
-                                MTN
-                            </span>
-
-
-                        </div>
-
-
-
-                        <div class="payment-body">
-
-                            <p class="send-label">
-                                Send your support to
-                            </p>
-
-
-                            <a
-                                href="tel:0772314539"
-                                class="payment-number"
-                            >
-                                0772 314 539
-                            </a>
-
-
-                            <p class="account-name">
-                                Pr Daniel Musanje
-                            </p>
-
-                        </div>
-
-
-
-                        <a
-                            href="tel:0772314539"
-                            class="pay-now-btn mtn-btn"
-                        >
-
-                            <span>
-                                Support with MTN MoMo
-                            </span>
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                        </a>
-
-
-                    </div>
-
-
-
-                    <!-- AIRTEL MONEY -->
-
-                    <div class="payment-option airtel-payment">
-
-
-                        <div class="payment-header airtel-header">
-
-
-                            <div class="network-brand">
-
-
-                                <div class="network-logo airtel-logo">
-                                    airtel
-                                </div>
-
-
-                                <div>
-
-                                    <span class="network-name">
-                                        AIRTEL MONEY
-                                    </span>
-
-                                    <small>
-                                        Support using Airtel Money
-                                    </small>
-
-                                </div>
-
-
-                            </div>
-
-
-                            <span class="payment-badge">
-                                AIRTEL
-                            </span>
-
-
-                        </div>
-
-
-
-                        <div class="payment-body">
-
-                            <p class="send-label">
-                                Send your support to
-                            </p>
-
-
-                            <a
-                                href="tel:0752277443"
-                                class="payment-number"
-                            >
-                                0752 277 443
-                            </a>
-
-
-                            <p class="account-name">
-                                Pr Daniel Musanje
-                            </p>
-
-                        </div>
-
-
-
-                        <a
-                            href="tel:0752277443"
-                            class="pay-now-btn airtel-btn"
-                        >
-
-                            <span>
-                                Support with Airtel Money
-                            </span>
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                        </a>
-
-
-                    </div>
-
-
-
-                    <div class="support-footer">
-
-                        <span>
-                            ❤️
-                        </span>
-
-                        <p>
-                            Thank you for supporting the work of God.
-                            Every contribution makes a difference.
-                        </p>
-
-                    </div>
-
-
                 </div>
-
-
-                <!-- EMAIL BUTTON -->
-
-                <a
-                    href="mailto:joshuantale118@gmail.com"
-                    class="contact-button"
-                >
-                    Send Us an Email
-                </a>
-
 
             </div>
 
         </div>
 
-    </section>
+
+        <!-- RIGHT -->
+
+        <div class="contact-card">
+
+            <h3 class="contact-card-title">
+                Church Contacts
+            </h3>
 
 
+            <div id="contacts-list"></div>
 
-    <!-- FOOTER -->
 
-    <footer>
+            <!-- SUPPORT -->
 
-        <div>
+            <div class="support-box">
+
+                <div class="support-top">
+
+                    <div class="support-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <p class="support-label">
+                            GIVING & SUPPORT
+                        </p>
+
+                        <h3>
+                            Support the Ministry
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <p class="support-text">
+                    Your generous support helps us continue
+                    spreading the Gospel, transforming lives
+                    and advancing God's work.
+                </p>
+
+
+                <div class="support-account">
+
+                    <span>
+                        Mobile Money Account Name
+                    </span>
+
+                    <strong id="support-name">
+                        Pr Daniel Musanje
+                    </strong>
+
+                </div>
+
+
+                <!-- MTN -->
+
+                <div class="payment-option">
+
+                    <div class="payment-header mtn-header">
+
+                        <div class="network-brand">
+
+                            <div class="network-logo mtn-logo">
+                                MTN
+                            </div>
+
+                            <div>
+
+                                <span class="network-name">
+                                    MTN MOBILE MONEY
+                                </span>
+
+                                <small>
+                                    Support using MTN MoMo
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <span class="payment-badge">
+                            MTN
+                        </span>
+
+                    </div>
+
+
+                    <div class="payment-body">
+
+                        <p class="send-label">
+                            Send your support to
+                        </p>
+
+                        <a
+                            id="mtn-number"
+                            class="payment-number"
+                            href="tel:0772314539">
+                            0772 314 539
+                        </a>
+
+                        <p
+                            class="account-name"
+                            id="mtn-account">
+                            Pr Daniel Musanje
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AIRTEL -->
+
+                <div class="payment-option">
+
+                    <div class="payment-header airtel-header">
+
+                        <div class="network-brand">
+
+                            <div class="network-logo airtel-logo">
+                                airtel
+                            </div>
+
+                            <div>
+
+                                <span class="network-name">
+                                    AIRTEL MONEY
+                                </span>
+
+                                <small>
+                                    Support using Airtel Money
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <span class="payment-badge">
+                            AIRTEL
+                        </span>
+
+                    </div>
+
+
+                    <div class="payment-body">
+
+                        <p class="send-label">
+                            Send your support to
+                        </p>
+
+                        <a
+                            id="airtel-number"
+                            class="payment-number"
+                            href="tel:0752277443">
+                            0752 277 443
+                        </a>
+
+                        <p
+                            class="account-name"
+                            id="airtel-account">
+                            Pr Daniel Musanje
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="submit-support-btn"
+                    id="open-support-form">
+
+                    ❤️ Submit Your Support
+
+                </button>
+
+
+                <div class="support-footer">
+
+                    ❤️
+
+                    <p>
+                        Thank you for supporting the work of God.
+                        Every contribution makes a difference.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="mailto:joshuantale118@gmail.com"
+                class="contact-button"
+                id="email-button">
+
+                Send Us an Email
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+
+        <h3>
+            Seeta Revival Church
+        </h3>
+
+        <p>
+            Encounter God. Experience His Presence.
+        </p>
+
+    </div>
+
+    <p>
+        © 2026 Seeta Revival Church.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     ADMIN LOGIN MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="login-modal">
+
+    <div class="modal-box small-modal">
+
+        <button
+            class="close-modal"
+            data-close="login-modal">
+            ×
+        </button>
+
+        <h2>
+            Admin Login
+        </h2>
+
+        <p>
+            Manage the church website.
+        </p>
+
+
+        <form id="login-form">
+
+            <label>
+                Username
+            </label>
+
+            <input
+                id="login-username"
+                required
+                placeholder="Enter username">
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="login-password"
+                required
+                placeholder="Enter password">
+
+
+            <button
+                class="form-btn"
+                type="submit">
+
+                Login
+
+            </button>
+
+
+            <p
+                class="form-message"
+                id="login-message">
+            </p>
+
+        </form>
+
+
+        <p class="login-note">
+
+            Default login:
+            <b>admin</b> /
+            <b>church123</b>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUPPORT FORM
+===================================================== -->
+
+<div
+    class="modal"
+    id="support-modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            data-close="support-modal">
+            ×
+        </button>
+
+        <h2>
+            Submit Your Support
+        </h2>
+
+        <p>
+            Thank you for supporting the work of God.
+        </p>
+
+
+        <form id="support-form">
+
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        id="giver-name"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        id="giver-phone"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <label>
+                Amount (UGX)
+            </label>
+
+            <input
+                type="number"
+                id="support-amount"
+                required
+                min="1"
+                placeholder="Enter amount">
+
+
+            <label>
+                Payment Network
+            </label>
+
+            <select id="support-network">
+
+                <option>
+                    MTN Mobile Money
+                </option>
+
+                <option>
+                    Airtel Money
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>
+                Upload Proof of Support
+                <span class="optional">
+                    (Optional)
+                </span>
+            </label>
+
+            <input
+                type="file"
+                id="support-proof"
+                accept="image/*,.pdf">
+
+
+            <label>
+                Message / Note
+                <span class="optional">
+                    (Optional)
+                </span>
+            </label>
+
+            <textarea
+                id="support-note"
+                rows="3">
+            </textarea>
+
+
+            <button
+                class="form-btn"
+                type="submit">
+
+                Submit Support
+
+            </button>
+
+
+            <p
+                class="form-message"
+                id="support-message">
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+===================================================== -->
+
+<div
+    class="admin-panel"
+    id="admin-panel">
+
+
+    <!-- SIDEBAR -->
+
+    <div class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            Seeta Revival
+
+            <br>
+
+            <span>
+                Admin Panel
+            </span>
+
+        </div>
+
+
+        <button
+            class="admin-tab active"
+            data-tab="admin-events">
+
+            📅 Events
+
+        </button>
+
+
+        <button
+            class="admin-tab"
+            data-tab="admin-sermons">
+
+            🎥 Sermons
+
+        </button>
+
+
+        <button
+            class="admin-tab"
+            data-tab="admin-contacts">
+
+            📞 Contacts
+
+        </button>
+
+
+        <button
+            class="admin-tab"
+            data-tab="admin-support">
+
+            ❤️ Giving
+
+        </button>
+
+
+        <button
+            class="admin-tab"
+            data-tab="admin-submissions">
+
+            💰 Support Records
+
+        </button>
+
+
+        <button
+            class="logout-btn"
+            id="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- ADMIN MAIN -->
+
+    <div class="admin-main">
+
+
+        <div class="admin-top">
+
+            <h2>
+                Church Website Management
+            </h2>
+
+            <button
+                class="close-admin"
+                id="close-admin">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- EVENTS -->
+
+        <div
+            class="admin-section active"
+            id="admin-events">
+
+            <div class="admin-section-head">
+
+                <div>
+
+                    <h3>
+                        Manage Events
+                    </h3>
+
+                    <p>
+                        Add, edit or delete upcoming events.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-btn"
+                    id="add-event-btn">
+
+                    + Add Event
+
+                </button>
+
+            </div>
+
+
+            <div id="admin-events-list"></div>
+
+        </div>
+
+
+        <!-- SERMONS -->
+
+        <div
+            class="admin-section"
+            id="admin-sermons">
+
+            <div class="admin-section-head">
+
+                <div>
+
+                    <h3>
+                        Manage Sermons
+                    </h3>
+
+                    <p>
+                        Add YouTube, Facebook or other sermon links.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-btn"
+                    id="add-sermon-btn">
+
+                    + Add Sermon
+
+                </button>
+
+            </div>
+
+
+            <div id="admin-sermons-list"></div>
+
+        </div>
+
+
+        <!-- CONTACTS -->
+
+        <div
+            class="admin-section"
+            id="admin-contacts">
 
             <h3>
-                Seeta Revival Church
+                Church Contacts
             </h3>
 
             <p>
-                Encounter God. Experience His Presence.
+                Change contact information shown on the website.
             </p>
+
+
+            <form
+                id="contacts-form"
+                class="admin-form">
+
+
+                <label>
+                    Location
+                </label>
+
+                <input id="admin-location">
+
+
+                <label>
+                    Email
+                </label>
+
+                <input id="admin-email">
+
+
+                <label>
+                    Lead Pastor Name
+                </label>
+
+                <input id="admin-pastor-name">
+
+
+                <label>
+                    Lead Pastor Phone
+                </label>
+
+                <input id="admin-pastor-phone">
+
+
+                <label>
+                    Second Pastor Name
+                </label>
+
+                <input id="admin-second-name">
+
+
+                <label>
+                    Second Pastor Phone
+                </label>
+
+                <input id="admin-second-phone">
+
+
+                <label>
+                    Third Pastor Name
+                </label>
+
+                <input id="admin-third-name">
+
+
+                <label>
+                    Third Pastor Phone
+                </label>
+
+                <input id="admin-third-phone">
+
+
+                <button
+                    class="form-btn"
+                    type="submit">
+
+                    Save Contacts
+
+                </button>
+
+
+                <p
+                    class="form-message"
+                    id="contacts-message">
+                </p>
+
+            </form>
 
         </div>
 
 
-        <p>
-            © 2026 Seeta Revival Church. All Rights Reserved.
-        </p>
+        <!-- GIVING -->
 
-    </footer>
+        <div
+            class="admin-section"
+            id="admin-support">
+
+            <h3>
+                Giving & Support Information
+            </h3>
+
+            <p>
+                Change the mobile money details displayed to visitors.
+            </p>
 
 
+            <form
+                id="giving-form"
+                class="admin-form">
 
-    <!-- JAVASCRIPT -->
 
-    <script src="script.js"></script>
+                <label>
+                    Account Name
+                </label>
+
+                <input id="admin-support-name">
+
+
+                <label>
+                    MTN Number
+                </label>
+
+                <input id="admin-mtn-number">
+
+
+                <label>
+                    MTN Account Name
+                </label>
+
+                <input id="admin-mtn-account">
+
+
+                <label>
+                    Airtel Number
+                </label>
+
+                <input id="admin-airtel-number">
+
+
+                <label>
+                    Airtel Account Name
+                </label>
+
+                <input id="admin-airtel-account">
+
+
+                <button
+                    class="form-btn"
+                    type="submit">
+
+                    Save Giving Details
+
+                </button>
+
+
+                <p
+                    class="form-message"
+                    id="giving-message">
+                </p>
+
+            </form>
+
+        </div>
+
+
+        <!-- SUPPORT RECORDS -->
+
+        <div
+            class="admin-section"
+            id="admin-submissions">
+
+            <div class="admin-section-head">
+
+                <div>
+
+                    <h3>
+                        Support Submissions
+                    </h3>
+
+                    <p>
+                        Review supporters and mark payments as received.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="support-submissions-list"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EVENT / SERMON EDITOR
+===================================================== -->
+
+<div
+    class="modal"
+    id="editor-modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            data-close="editor-modal">
+            ×
+        </button>
+
+
+        <h2 id="editor-title">
+            Add Event
+        </h2>
+
+
+        <form id="editor-form"></form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
