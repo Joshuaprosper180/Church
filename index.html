@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Seeta Revival Church</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
-        Seeta Revival Church
-    </div>
+    <div class="logo">Seeta Revival Church</div>
 
-    <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Open navigation menu">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
         ☰
     </button>
 
     <nav id="nav-menu">
 
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#ministries">Ministries</a>
-    <a href="#events">Events</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ministries">Ministries</a>
+        <a href="#events">Events</a>
+        <a href="#schedule">Program</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#contact">Contact</a>
 
-    <a href="#sermons">Sermons</a>
+        <button class="admin-nav-btn" id="open-login" type="button">
+            Admin
+        </button>
 
-    <a href="#contact">Contact</a>
-
-    <button class="admin-nav-btn" id="open-login">
-        Admin
-    </button>
-
-</nav>
+    </nav>
 
 </header>
 
 
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="hero">
 
@@ -78,9 +68,9 @@
                 Upcoming Events
             </a>
 
-           <a href="#watch-sermons" class="dark-btn sermon-button">
-    Watch Sermon <span>→</span>
-</a>
+            <a href="#watch-sermons" class="dark-btn hero-dark sermon-button">
+                Watch Sermon <span>→</span>
+            </a>
 
         </div>
 
@@ -89,9 +79,36 @@
 </section>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<!-- ================= SCRIPTURE OF THE DAY ================= -->
+
+<section id="scripture" class="scripture-section">
+
+    <div class="section-container center">
+
+        <p class="section-label">
+            WORD FOR TODAY
+        </p>
+
+        <h2 class="section-title">
+            Scripture of the Day
+        </h2>
+
+        <div class="scripture-card">
+
+            <span class="quote-mark">“</span>
+
+            <p id="scripture-text"></p>
+
+            <strong id="scripture-reference"></strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
@@ -127,8 +144,6 @@
 
         <div class="about-right">
 
-            <!-- PASTOR -->
-
             <div class="about-box pastor-box">
 
                 <img
@@ -148,13 +163,9 @@
             </div>
 
 
-            <!-- VISION -->
-
             <div class="about-box vision-box">
 
-                <h3>
-                    Our Vision
-                </h3>
+                <h3>Our Vision</h3>
 
                 <p>
                     Bringing Revival to all through the Gospel by
@@ -162,9 +173,7 @@
                     till the End.
                 </p>
 
-                <h3>
-                    Our Mission
-                </h3>
+                <h3>Our Mission</h3>
 
                 <p>
                     Spiritual Revival to bring a Physical Revival,
@@ -172,9 +181,7 @@
                     Scriptures to cause Change.
                 </p>
 
-                <h3>
-                    Our Slogan
-                </h3>
+                <h3>Our Slogan</h3>
 
                 <p>
                     Begin with the Spirit at the Prayer Tent.
@@ -189,9 +196,7 @@
 </section>
 
 
-<!-- =====================================================
-     MINISTRIES
-===================================================== -->
+<!-- ================= MINISTRIES ================= -->
 
 <section id="ministries">
 
@@ -215,13 +220,9 @@
 
             <div class="ministry">
 
-                <div class="ministry-icon">
-                    🎵
-                </div>
+                <div class="ministry-icon">🎵</div>
 
-                <h3>
-                    Worship Ministry
-                </h3>
+                <h3>Worship Ministry</h3>
 
                 <p>
                     Leading God's people into His presence
@@ -233,13 +234,9 @@
 
             <div class="ministry">
 
-                <div class="ministry-icon">
-                    🙌
-                </div>
+                <div class="ministry-icon">🙌</div>
 
-                <h3>
-                    Youth Ministry
-                </h3>
+                <h3>Youth Ministry</h3>
 
                 <p>
                     Equipping young people to live
@@ -251,13 +248,9 @@
 
             <div class="ministry">
 
-                <div class="ministry-icon">
-                    ❤️
-                </div>
+                <div class="ministry-icon">❤️</div>
 
-                <h3>
-                    Children's Ministry
-                </h3>
+                <h3>Children's Ministry</h3>
 
                 <p>
                     Helping children grow in the
@@ -269,13 +262,9 @@
 
             <div class="ministry">
 
-                <div class="ministry-icon">
-                    🙏
-                </div>
+                <div class="ministry-icon">🙏</div>
 
-                <h3>
-                    Prayer Ministry
-                </h3>
+                <h3>Prayer Ministry</h3>
 
                 <p>
                     Standing together in prayer
@@ -291,9 +280,7 @@
 </section>
 
 
-<!-- =====================================================
-     EVENTS
-===================================================== -->
+<!-- ================= EVENTS ================= -->
 
 <section id="events">
 
@@ -317,25 +304,44 @@
         </div>
 
 
-        <!-- JavaScript will load events here -->
-
-        <div
-            class="events-grid"
-            id="events-list">
-        </div>
+        <div class="events-grid" id="events-list"></div>
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     SERMONS
-===================================================== -->
+<!-- ================= CHURCH PROGRAM ================= -->
+
+<section id="schedule">
+
+    <div class="section-container center">
+
+        <p class="section-label">
+            JOIN US
+        </p>
+
+        <h2 class="section-title">
+            Weekly Church Program
+        </h2>
+
+        <p class="section-description">
+            There is something happening throughout the week.
+            You are welcome to join us.
+        </p>
+
+        <div class="schedule-grid" id="schedule-list"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERMONS ================= -->
 
 <section id="sermons">
 
-    <div class="section-container">
+    <div class="section-container center">
 
         <p class="section-label">
             BE ENCOURAGED
@@ -370,28 +376,23 @@
 
             </div>
 
-
             <a href="#watch-sermons" class="sermon-button">
-
-                Watch Sermon
-                <span>→</span>
-
+                Watch Sermon <span>→</span>
             </a>
 
         </div>
+
+
+        <div class="sermons-grid" id="sermons-list"></div>
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     WATCH SERMONS
-===================================================== -->
+<!-- ================= WATCH SERMONS ================= -->
 
-<section
-    id="watch-sermons"
-    class="watch-platforms">
+<section id="watch-sermons" class="watch-platforms">
 
     <div class="section-container center">
 
@@ -411,21 +412,17 @@
 
         <div class="platform-container">
 
-            <!-- YOUTUBE -->
 
             <a
                 href="https://youtube.com/@seetarevivalchurch-l1b?si=jLZWcvqkJldgZcpQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="platform-card youtube-card">
+                class="platform-card youtube-card"
+            >
 
-                <div class="platform-icon">
-                    ▶
-                </div>
+                <div class="platform-icon">▶</div>
 
-                <h3>
-                    YouTube
-                </h3>
+                <h3>YouTube</h3>
 
                 <p>
                     Watch full sermons, teachings and inspiring
@@ -439,21 +436,18 @@
             </a>
 
 
-            <!-- FACEBOOK -->
-
             <a
                 href="https://www.facebook.com/profile.php?id=100070647061072"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="platform-card facebook-card">
+                class="platform-card facebook-card"
+            >
 
                 <div class="platform-icon facebook-symbol">
                     f
                 </div>
 
-                <h3>
-                    Facebook
-                </h3>
+                <h3>Facebook</h3>
 
                 <p>
                     Follow us for sermons, live services,
@@ -467,21 +461,16 @@
             </a>
 
 
-            <!-- TIKTOK -->
-
             <a
                 href="https://www.tiktok.com/@seeta.revival.chu"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="platform-card tiktok-card">
+                class="platform-card tiktok-card"
+            >
 
-                <div class="platform-icon">
-                    ♪
-                </div>
+                <div class="platform-icon">♪</div>
 
-                <h3>
-                    TikTok
-                </h3>
+                <h3>TikTok</h3>
 
                 <p>
                     Watch short sermons, encouraging messages
@@ -501,16 +490,12 @@
 </section>
 
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
     <div class="section-container contact-container">
 
-
-        <!-- LEFT -->
 
         <div class="contact-info">
 
@@ -534,9 +519,7 @@
 
                 <div>
 
-                    <h3>
-                        Location
-                    </h3>
+                    <h3>Location</h3>
 
                     <p id="church-location">
                         Seeta, Kasangati, Uganda
@@ -553,9 +536,7 @@
 
                 <div>
 
-                    <h3>
-                        Email
-                    </h3>
+                    <h3>Email</h3>
 
                     <p id="church-email">
                         joshuantale118@gmail.com
@@ -568,14 +549,11 @@
         </div>
 
 
-        <!-- RIGHT -->
-
         <div class="contact-card">
 
             <h3 class="contact-card-title">
                 Church Contacts
             </h3>
-
 
             <div id="contacts-list"></div>
 
@@ -651,10 +629,6 @@
 
                         </div>
 
-                        <span class="payment-badge">
-                            MTN
-                        </span>
-
                     </div>
 
 
@@ -667,13 +641,15 @@
                         <a
                             id="mtn-number"
                             class="payment-number"
-                            href="tel:0772314539">
+                            href="tel:0772314539"
+                        >
                             0772 314 539
                         </a>
 
                         <p
                             class="account-name"
-                            id="mtn-account">
+                            id="mtn-account"
+                        >
                             Pr Daniel Musanje
                         </p>
 
@@ -708,10 +684,6 @@
 
                         </div>
 
-                        <span class="payment-badge">
-                            AIRTEL
-                        </span>
-
                     </div>
 
 
@@ -724,13 +696,15 @@
                         <a
                             id="airtel-number"
                             class="payment-number"
-                            href="tel:0752277443">
+                            href="tel:0752277443"
+                        >
                             0752 277 443
                         </a>
 
                         <p
                             class="account-name"
-                            id="airtel-account">
+                            id="airtel-account"
+                        >
                             Pr Daniel Musanje
                         </p>
 
@@ -741,10 +715,10 @@
 
                 <button
                     class="submit-support-btn"
-                    id="open-support-form">
-
+                    id="open-support-form"
+                    type="button"
+                >
                     ❤️ Submit Your Support
-
                 </button>
 
 
@@ -765,10 +739,8 @@
             <a
                 href="mailto:joshuantale118@gmail.com"
                 class="contact-button"
-                id="email-button">
-
+            >
                 Send Us an Email
-
             </a>
 
         </div>
@@ -778,9 +750,7 @@
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -804,25 +774,21 @@
 </footer>
 
 
-<!-- =====================================================
-     ADMIN LOGIN MODAL
-===================================================== -->
+<!-- ================= LOGIN MODAL ================= -->
 
-<div
-    class="modal"
-    id="login-modal">
+<div class="modal" id="login-modal">
 
     <div class="modal-box small-modal">
 
         <button
             class="close-modal"
-            data-close="login-modal">
+            data-close="login-modal"
+            type="button"
+        >
             ×
         </button>
 
-        <h2>
-            Admin Login
-        </h2>
+        <h2>Admin Login</h2>
 
         <p>
             Manage the church website.
@@ -831,50 +797,41 @@
 
         <form id="login-form">
 
-            <label>
-                Username
-            </label>
+            <label>Username</label>
 
             <input
                 id="login-username"
                 required
-                placeholder="Enter username">
+                placeholder="Enter username"
+            >
 
 
-            <label>
-                Password
-            </label>
+            <label>Password</label>
 
             <input
                 type="password"
                 id="login-password"
                 required
-                placeholder="Enter password">
+                placeholder="Enter password"
+            >
 
 
-            <button
-                class="form-btn"
-                type="submit">
-
+            <button class="form-btn" type="submit">
                 Login
-
             </button>
-
 
             <p
                 class="form-message"
-                id="login-message">
-            </p>
+                id="login-message"
+            ></p>
 
         </form>
 
 
         <p class="login-note">
-
             Default login:
             <b>admin</b> /
             <b>church123</b>
-
         </p>
 
     </div>
@@ -882,25 +839,21 @@
 </div>
 
 
-<!-- =====================================================
-     SUPPORT FORM
-===================================================== -->
+<!-- ================= SUPPORT MODAL ================= -->
 
-<div
-    class="modal"
-    id="support-modal">
+<div class="modal" id="support-modal">
 
     <div class="modal-box">
 
         <button
             class="close-modal"
-            data-close="support-modal">
+            data-close="support-modal"
+            type="button"
+        >
             ×
         </button>
 
-        <h2>
-            Submit Your Support
-        </h2>
+        <h2>Submit Your Support</h2>
 
         <p>
             Thank you for supporting the work of God.
@@ -909,109 +862,85 @@
 
         <form id="support-form">
 
-
             <div class="form-grid">
 
                 <div>
 
-                    <label>
-                        Your Name
-                    </label>
+                    <label>Your Name</label>
 
-                    <input
-                        id="giver-name"
-                        required>
+                    <input id="giver-name" required>
 
                 </div>
 
 
                 <div>
 
-                    <label>
-                        Phone Number
-                    </label>
+                    <label>Phone Number</label>
 
-                    <input
-                        id="giver-phone"
-                        required>
+                    <input id="giver-phone" required>
 
                 </div>
 
             </div>
 
 
-            <label>
-                Amount (UGX)
-            </label>
+            <label>Amount (UGX)</label>
 
             <input
                 type="number"
                 id="support-amount"
                 required
                 min="1"
-                placeholder="Enter amount">
+                placeholder="Enter amount"
+            >
 
 
-            <label>
-                Payment Network
-            </label>
+            <label>Payment Network</label>
 
             <select id="support-network">
 
-                <option>
-                    MTN Mobile Money
-                </option>
-
-                <option>
-                    Airtel Money
-                </option>
-
-                <option>
-                    Other
-                </option>
+                <option>MTN Mobile Money</option>
+                <option>Airtel Money</option>
+                <option>Other</option>
 
             </select>
 
 
             <label>
                 Upload Proof of Support
-                <span class="optional">
-                    (Optional)
-                </span>
+                <span class="optional">(Optional)</span>
             </label>
 
             <input
                 type="file"
                 id="support-proof"
-                accept="image/*,.pdf">
+                accept="image/*,.pdf"
+            >
 
 
             <label>
                 Message / Note
-                <span class="optional">
-                    (Optional)
-                </span>
+                <span class="optional">(Optional)</span>
             </label>
 
             <textarea
                 id="support-note"
-                rows="3">
-            </textarea>
+                rows="3"
+            ></textarea>
 
 
             <button
                 class="form-btn"
-                type="submit">
-
+                type="submit"
+            >
                 Submit Support
-
             </button>
 
 
             <p
                 class="form-message"
-                id="support-message">
-            </p>
+                id="support-message"
+            ></p>
 
         </form>
 
@@ -1020,16 +949,10 @@
 </div>
 
 
-<!-- =====================================================
-     ADMIN DASHBOARD
-===================================================== -->
+<!-- ================= ADMIN PANEL ================= -->
 
-<div
-    class="admin-panel"
-    id="admin-panel">
+<div class="admin-panel" id="admin-panel">
 
-
-    <!-- SIDEBAR -->
 
     <div class="admin-sidebar">
 
@@ -1048,64 +971,71 @@
 
         <button
             class="admin-tab active"
-            data-tab="admin-events">
-
+            data-tab="admin-events"
+        >
             📅 Events
-
         </button>
 
 
         <button
             class="admin-tab"
-            data-tab="admin-sermons">
-
+            data-tab="admin-sermons"
+        >
             🎥 Sermons
-
         </button>
 
 
         <button
             class="admin-tab"
-            data-tab="admin-contacts">
+            data-tab="admin-schedule"
+        >
+            📅 Church Program
+        </button>
 
+
+        <button
+            class="admin-tab"
+            data-tab="admin-scripture"
+        >
+            📖 Scripture of the Day
+        </button>
+
+
+        <button
+            class="admin-tab"
+            data-tab="admin-contacts"
+        >
             📞 Contacts
-
         </button>
 
 
         <button
             class="admin-tab"
-            data-tab="admin-support">
-
+            data-tab="admin-support"
+        >
             ❤️ Giving
-
         </button>
 
 
         <button
             class="admin-tab"
-            data-tab="admin-submissions">
-
+            data-tab="admin-submissions"
+        >
             💰 Support Records
-
         </button>
 
 
         <button
             class="logout-btn"
-            id="logout-btn">
-
+            id="logout-btn"
+        >
             Logout
-
         </button>
 
     </div>
 
 
-    <!-- ADMIN MAIN -->
-
     <div class="admin-main">
-
 
         <div class="admin-top">
 
@@ -1115,10 +1045,9 @@
 
             <button
                 class="close-admin"
-                id="close-admin">
-
+                id="close-admin"
+            >
                 ×
-
             </button>
 
         </div>
@@ -1128,7 +1057,8 @@
 
         <div
             class="admin-section active"
-            id="admin-events">
+            id="admin-events"
+        >
 
             <div class="admin-section-head">
 
@@ -1147,14 +1077,12 @@
 
                 <button
                     class="add-btn"
-                    id="add-event-btn">
-
+                    id="add-event-btn"
+                >
                     + Add Event
-
                 </button>
 
             </div>
-
 
             <div id="admin-events-list"></div>
 
@@ -1165,7 +1093,8 @@
 
         <div
             class="admin-section"
-            id="admin-sermons">
+            id="admin-sermons"
+        >
 
             <div class="admin-section-head">
 
@@ -1184,16 +1113,110 @@
 
                 <button
                     class="add-btn"
-                    id="add-sermon-btn">
-
+                    id="add-sermon-btn"
+                >
                     + Add Sermon
-
                 </button>
 
             </div>
 
-
             <div id="admin-sermons-list"></div>
+
+        </div>
+
+
+        <!-- CHURCH PROGRAM -->
+
+        <div
+            class="admin-section"
+            id="admin-schedule"
+        >
+
+            <div class="admin-section-head">
+
+                <div>
+
+                    <h3>
+                        Manage Weekly Church Program
+                    </h3>
+
+                    <p>
+                        Add, edit or remove services and ministry programs.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-btn"
+                    id="add-schedule-btn"
+                >
+                    + Add Program
+                </button>
+
+            </div>
+
+            <div id="admin-schedule-list"></div>
+
+        </div>
+
+
+        <!-- SCRIPTURE -->
+
+        <div
+            class="admin-section"
+            id="admin-scripture"
+        >
+
+            <h3>
+                Scripture of the Day
+            </h3>
+
+            <p>
+                Change the scripture displayed on the website.
+            </p>
+
+
+            <form
+                id="scripture-form"
+                class="admin-form"
+            >
+
+                <label>
+                    Scripture Reference
+                </label>
+
+                <input
+                    id="admin-scripture-reference"
+                    required
+                >
+
+
+                <label>
+                    Scripture Text
+                </label>
+
+                <textarea
+                    id="admin-scripture-text"
+                    rows="6"
+                    required
+                ></textarea>
+
+
+                <button
+                    class="form-btn"
+                    type="submit"
+                >
+                    Save Scripture
+                </button>
+
+
+                <p
+                    class="form-message"
+                    id="scripture-message"
+                ></p>
+
+            </form>
 
         </div>
 
@@ -1202,7 +1225,8 @@
 
         <div
             class="admin-section"
-            id="admin-contacts">
+            id="admin-contacts"
+        >
 
             <h3>
                 Church Contacts
@@ -1215,78 +1239,44 @@
 
             <form
                 id="contacts-form"
-                class="admin-form">
+                class="admin-form"
+            >
 
-
-                <label>
-                    Location
-                </label>
-
+                <label>Location</label>
                 <input id="admin-location">
 
-
-                <label>
-                    Email
-                </label>
-
+                <label>Email</label>
                 <input id="admin-email">
 
-
-                <label>
-                    Lead Pastor Name
-                </label>
-
+                <label>Lead Pastor Name</label>
                 <input id="admin-pastor-name">
 
-
-                <label>
-                    Lead Pastor Phone
-                </label>
-
+                <label>Lead Pastor Phone</label>
                 <input id="admin-pastor-phone">
 
-
-                <label>
-                    Second Pastor Name
-                </label>
-
+                <label>Second Pastor Name</label>
                 <input id="admin-second-name">
 
-
-                <label>
-                    Second Pastor Phone
-                </label>
-
+                <label>Second Pastor Phone</label>
                 <input id="admin-second-phone">
 
-
-                <label>
-                    Third Pastor Name
-                </label>
-
+                <label>Third Pastor Name</label>
                 <input id="admin-third-name">
 
-
-                <label>
-                    Third Pastor Phone
-                </label>
-
+                <label>Third Pastor Phone</label>
                 <input id="admin-third-phone">
-
 
                 <button
                     class="form-btn"
-                    type="submit">
-
+                    type="submit"
+                >
                     Save Contacts
-
                 </button>
-
 
                 <p
                     class="form-message"
-                    id="contacts-message">
-                </p>
+                    id="contacts-message"
+                ></p>
 
             </form>
 
@@ -1297,7 +1287,8 @@
 
         <div
             class="admin-section"
-            id="admin-support">
+            id="admin-support"
+        >
 
             <h3>
                 Giving & Support Information
@@ -1310,57 +1301,35 @@
 
             <form
                 id="giving-form"
-                class="admin-form">
+                class="admin-form"
+            >
 
-
-                <label>
-                    Account Name
-                </label>
-
+                <label>Account Name</label>
                 <input id="admin-support-name">
 
-
-                <label>
-                    MTN Number
-                </label>
-
+                <label>MTN Number</label>
                 <input id="admin-mtn-number">
 
-
-                <label>
-                    MTN Account Name
-                </label>
-
+                <label>MTN Account Name</label>
                 <input id="admin-mtn-account">
 
-
-                <label>
-                    Airtel Number
-                </label>
-
+                <label>Airtel Number</label>
                 <input id="admin-airtel-number">
 
-
-                <label>
-                    Airtel Account Name
-                </label>
-
+                <label>Airtel Account Name</label>
                 <input id="admin-airtel-account">
-
 
                 <button
                     class="form-btn"
-                    type="submit">
-
+                    type="submit"
+                >
                     Save Giving Details
-
                 </button>
-
 
                 <p
                     class="form-message"
-                    id="giving-message">
-                </p>
+                    id="giving-message"
+                ></p>
 
             </form>
 
@@ -1371,24 +1340,16 @@
 
         <div
             class="admin-section"
-            id="admin-submissions">
+            id="admin-submissions"
+        >
 
-            <div class="admin-section-head">
+            <h3>
+                Support Submissions
+            </h3>
 
-                <div>
-
-                    <h3>
-                        Support Submissions
-                    </h3>
-
-                    <p>
-                        Review supporters and mark payments as received.
-                    </p>
-
-                </div>
-
-            </div>
-
+            <p>
+                Review supporters and mark payments as received.
+            </p>
 
             <div id="support-submissions-list"></div>
 
@@ -1399,27 +1360,23 @@
 </div>
 
 
-<!-- =====================================================
-     EVENT / SERMON EDITOR
-===================================================== -->
+<!-- ================= EDITOR MODAL ================= -->
 
-<div
-    class="modal"
-    id="editor-modal">
+<div class="modal" id="editor-modal">
 
     <div class="modal-box">
 
         <button
             class="close-modal"
-            data-close="editor-modal">
+            data-close="editor-modal"
+            type="button"
+        >
             ×
         </button>
 
-
         <h2 id="editor-title">
-            Add Event
+            Add Item
         </h2>
-
 
         <form id="editor-form"></form>
 
@@ -1427,10 +1384,6 @@
 
 </div>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script src="script.js"></script>
 
