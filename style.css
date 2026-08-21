@@ -1,1391 +1,1174 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Seeta Revival Church</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-    <div class="logo">Seeta Revival Church</div>
-
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
-        ☰
-    </button>
-
-    <nav id="nav-menu">
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#ministries">Ministries</a>
-        <a href="#events">Events</a>
-        <a href="#schedule">Program</a>
-        <a href="#sermons">Sermons</a>
-        <a href="#contact">Contact</a>
-
-        <button class="admin-nav-btn" id="open-login" type="button">
-            Admin
-        </button>
-
-    </nav>
-
-</header>
-
-
-<!-- ================= HOME ================= -->
-
-<section id="home" class="hero">
-
-    <div class="hero-content">
-
-        <p class="welcome">
-            WELCOME TO SEETA REVIVAL CHURCH
-        </p>
-
-        <h1>
-            Encounter God.<br>
-            Experience His Presence.
-        </h1>
-
-        <p class="hero-description">
-            A place where lives are transformed,
-            faith is strengthened and people encounter
-            the presence of God.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#events" class="btn">
-                Upcoming Events
-            </a>
-
-            <a href="#watch-sermons" class="dark-btn hero-dark sermon-button">
-                Watch Sermon <span>→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SCRIPTURE OF THE DAY ================= -->
-
-<section id="scripture" class="scripture-section">
-
-    <div class="section-container center">
-
-        <p class="section-label">
-            WORD FOR TODAY
-        </p>
-
-        <h2 class="section-title">
-            Scripture of the Day
-        </h2>
-
-        <div class="scripture-card">
-
-            <span class="quote-mark">“</span>
-
-            <p id="scripture-text"></p>
-
-            <strong id="scripture-reference"></strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-    <div class="section-container about-container">
-
-        <div class="about-text">
-
-            <p class="section-label">
-                WHO WE ARE
-            </p>
-
-            <h2>
-                A Place To Encounter God
-            </h2>
-
-            <p>
-                Seeta Revival Church is a community of believers
-                passionate about worship, prayer, the Word of God
-                and transformed lives.
-            </p>
-
-            <p>
-                We believe that every person can experience
-                the love, grace and transforming power of Jesus Christ.
-            </p>
-
-            <a href="#contact" class="dark-btn">
-                Visit Us
-            </a>
-
-        </div>
-
-
-        <div class="about-right">
-
-            <div class="about-box pastor-box">
-
-                <img
-                    src="pastor.jpg"
-                    alt="Pastor Daniel Musanje"
-                    class="pastor-image"
-                >
-
-                <h3 class="pastor-name">
-                    Pr Daniel Musanje
-                </h3>
-
-                <p class="pastor-title">
-                    Lead Pastor
-                </p>
-
-            </div>
-
-
-            <div class="about-box vision-box">
-
-                <h3>Our Vision</h3>
-
-                <p>
-                    Bringing Revival to all through the Gospel by
-                    Preaching, Teaching and Actionalising the Word
-                    till the End.
-                </p>
-
-                <h3>Our Mission</h3>
-
-                <p>
-                    Spiritual Revival to bring a Physical Revival,
-                    attained through Prayer, Fasting & Reading of
-                    Scriptures to cause Change.
-                </p>
-
-                <h3>Our Slogan</h3>
-
-                <p>
-                    Begin with the Spirit at the Prayer Tent.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MINISTRIES ================= -->
-
-<section id="ministries">
-
-    <div class="section-container center">
-
-        <p class="section-label">
-            GET CONNECTED
-        </p>
-
-        <h2 class="section-title">
-            Our Ministries
-        </h2>
-
-        <p class="section-description">
-            There is a place for everyone to grow,
-            serve and become part of what God is doing.
-        </p>
-
-
-        <div class="ministries-container">
-
-            <div class="ministry">
-
-                <div class="ministry-icon">🎵</div>
-
-                <h3>Worship Ministry</h3>
-
-                <p>
-                    Leading God's people into His presence
-                    through worship.
-                </p>
-
-            </div>
-
-
-            <div class="ministry">
-
-                <div class="ministry-icon">🙌</div>
-
-                <h3>Youth Ministry</h3>
-
-                <p>
-                    Equipping young people to live
-                    passionately for Christ.
-                </p>
-
-            </div>
-
-
-            <div class="ministry">
-
-                <div class="ministry-icon">❤️</div>
-
-                <h3>Children's Ministry</h3>
-
-                <p>
-                    Helping children grow in the
-                    knowledge and love of God.
-                </p>
-
-            </div>
-
-
-            <div class="ministry">
-
-                <div class="ministry-icon">🙏</div>
-
-                <h3>Prayer Ministry</h3>
-
-                <p>
-                    Standing together in prayer
-                    and intercession.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= EVENTS ================= -->
-
-<section id="events">
-
-    <div class="section-container">
-
-        <div class="events-heading">
-
-            <p class="section-label">
-                STAY CONNECTED
-            </p>
-
-            <h2>
-                Upcoming Events
-            </h2>
-
-            <p>
-                Join us for worship services, prayer meetings,
-                conferences and other life-changing events.
-            </p>
-
-        </div>
-
-
-        <div class="events-grid" id="events-list"></div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CHURCH PROGRAM ================= -->
-
-<section id="schedule">
-
-    <div class="section-container center">
-
-        <p class="section-label">
-            JOIN US
-        </p>
-
-        <h2 class="section-title">
-            Weekly Church Program
-        </h2>
-
-        <p class="section-description">
-            There is something happening throughout the week.
-            You are welcome to join us.
-        </p>
-
-        <div class="schedule-grid" id="schedule-list"></div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SERMONS ================= -->
-
-<section id="sermons">
-
-    <div class="section-container center">
-
-        <p class="section-label">
-            BE ENCOURAGED
-        </p>
-
-        <h2 class="section-title">
-            Latest Sermons
-        </h2>
-
-        <p class="section-description">
-            Watch and listen to inspiring messages from
-            Seeta Revival Church.
-        </p>
-
-
-        <div class="sermon-box">
-
-            <div class="sermon-icon">
-                ▶
-            </div>
-
-            <div class="sermon-content">
-
-                <h3>
-                    Messages That Transform Lives
-                </h3>
-
-                <p>
-                    Watch powerful teachings and sermons that
-                    will strengthen your faith.
-                </p>
-
-            </div>
-
-            <a href="#watch-sermons" class="sermon-button">
-                Watch Sermon <span>→</span>
-            </a>
-
-        </div>
-
-
-        <div class="sermons-grid" id="sermons-list"></div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= WATCH SERMONS ================= -->
-
-<section id="watch-sermons" class="watch-platforms">
-
-    <div class="section-container center">
-
-        <p class="section-label">
-            WATCH & BE BLESSED
-        </p>
-
-        <h2 class="section-title">
-            Choose Your Platform
-        </h2>
-
-        <p class="section-description">
-            Watch sermons, teachings and powerful messages
-            from Seeta Revival Church on your favourite platform.
-        </p>
-
-
-        <div class="platform-container">
-
-
-            <a
-                href="https://youtube.com/@seetarevivalchurch-l1b?si=jLZWcvqkJldgZcpQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card youtube-card"
-            >
-
-                <div class="platform-icon">▶</div>
-
-                <h3>YouTube</h3>
-
-                <p>
-                    Watch full sermons, teachings and inspiring
-                    videos from Seeta Revival Church.
-                </p>
-
-                <div class="platform-link">
-                    Watch on YouTube →
-                </div>
-
-            </a>
-
-
-            <a
-                href="https://www.facebook.com/profile.php?id=100070647061072"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card facebook-card"
-            >
-
-                <div class="platform-icon facebook-symbol">
-                    f
-                </div>
-
-                <h3>Facebook</h3>
-
-                <p>
-                    Follow us for sermons, live services,
-                    ministry updates and encouraging messages.
-                </p>
-
-                <div class="platform-link">
-                    Watch on Facebook →
-                </div>
-
-            </a>
-
-
-            <a
-                href="https://www.tiktok.com/@seeta.revival.chu"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card tiktok-card"
-            >
-
-                <div class="platform-icon">♪</div>
-
-                <h3>TikTok</h3>
-
-                <p>
-                    Watch short sermons, encouraging messages
-                    and special ministry moments.
-                </p>
-
-                <div class="platform-link">
-                    Watch on TikTok →
-                </div>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-    <div class="section-container contact-container">
-
-
-        <div class="contact-info">
-
-            <p class="contact-label">
-                GET IN TOUCH
-            </p>
-
-            <h2>
-                We'd Love To Hear From You
-            </h2>
-
-            <p class="contact-intro">
-                Reach out to us, visit us or join us
-                as we worship and grow together.
-            </p>
-
-
-            <div class="contact-detail">
-
-                <span>📍</span>
-
-                <div>
-
-                    <h3>Location</h3>
-
-                    <p id="church-location">
-                        Seeta, Kasangati, Uganda
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-detail">
-
-                <span>📧</span>
-
-                <div>
-
-                    <h3>Email</h3>
-
-                    <p id="church-email">
-                        joshuantale118@gmail.com
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="contact-card">
-
-            <h3 class="contact-card-title">
-                Church Contacts
-            </h3>
-
-            <div id="contacts-list"></div>
-
-
-            <!-- SUPPORT -->
-
-            <div class="support-box">
-
-                <div class="support-top">
-
-                    <div class="support-icon">
-                        ❤️
-                    </div>
-
-                    <div>
-
-                        <p class="support-label">
-                            GIVING & SUPPORT
-                        </p>
-
-                        <h3>
-                            Support the Ministry
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <p class="support-text">
-                    Your generous support helps us continue
-                    spreading the Gospel, transforming lives
-                    and advancing God's work.
-                </p>
-
-
-                <div class="support-account">
-
-                    <span>
-                        Mobile Money Account Name
-                    </span>
-
-                    <strong id="support-name">
-                        Pr Daniel Musanje
-                    </strong>
-
-                </div>
-
-
-                <!-- MTN -->
-
-                <div class="payment-option">
-
-                    <div class="payment-header mtn-header">
-
-                        <div class="network-brand">
-
-                            <div class="network-logo mtn-logo">
-                                MTN
-                            </div>
-
-                            <div>
-
-                                <span class="network-name">
-                                    MTN MOBILE MONEY
-                                </span>
-
-                                <small>
-                                    Support using MTN MoMo
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="payment-body">
-
-                        <p class="send-label">
-                            Send your support to
-                        </p>
-
-                        <a
-                            id="mtn-number"
-                            class="payment-number"
-                            href="tel:0772314539"
-                        >
-                            0772 314 539
-                        </a>
-
-                        <p
-                            class="account-name"
-                            id="mtn-account"
-                        >
-                            Pr Daniel Musanje
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- AIRTEL -->
-
-                <div class="payment-option">
-
-                    <div class="payment-header airtel-header">
-
-                        <div class="network-brand">
-
-                            <div class="network-logo airtel-logo">
-                                airtel
-                            </div>
-
-                            <div>
-
-                                <span class="network-name">
-                                    AIRTEL MONEY
-                                </span>
-
-                                <small>
-                                    Support using Airtel Money
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="payment-body">
-
-                        <p class="send-label">
-                            Send your support to
-                        </p>
-
-                        <a
-                            id="airtel-number"
-                            class="payment-number"
-                            href="tel:0752277443"
-                        >
-                            0752 277 443
-                        </a>
-
-                        <p
-                            class="account-name"
-                            id="airtel-account"
-                        >
-                            Pr Daniel Musanje
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    class="submit-support-btn"
-                    id="open-support-form"
-                    type="button"
-                >
-                    ❤️ Submit Your Support
-                </button>
-
-
-                <div class="support-footer">
-
-                    ❤️
-
-                    <p>
-                        Thank you for supporting the work of God.
-                        Every contribution makes a difference.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <a
-                href="mailto:joshuantale118@gmail.com"
-                class="contact-button"
-            >
-                Send Us an Email
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div>
-
-        <h3>
-            Seeta Revival Church
-        </h3>
-
-        <p>
-            Encounter God. Experience His Presence.
-        </p>
-
-    </div>
-
-    <p>
-        © 2026 Seeta Revival Church.
-        All Rights Reserved.
-    </p>
-
-</footer>
-
-
-<!-- ================= LOGIN MODAL ================= -->
-
-<div class="modal" id="login-modal">
-
-    <div class="modal-box small-modal">
-
-        <button
-            class="close-modal"
-            data-close="login-modal"
-            type="button"
-        >
-            ×
-        </button>
-
-        <h2>Admin Login</h2>
-
-        <p>
-            Manage the church website.
-        </p>
-
-
-        <form id="login-form">
-
-            <label>Username</label>
-
-            <input
-                id="login-username"
-                required
-                placeholder="Enter username"
-            >
-
-
-            <label>Password</label>
-
-            <input
-                type="password"
-                id="login-password"
-                required
-                placeholder="Enter password"
-            >
-
-
-            <button class="form-btn" type="submit">
-                Login
-            </button>
-
-            <p
-                class="form-message"
-                id="login-message"
-            ></p>
-
-        </form>
-
-
-        <p class="login-note">
-            Default login:
-            <b>admin</b> /
-            <b>church123</b>
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- ================= SUPPORT MODAL ================= -->
-
-<div class="modal" id="support-modal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-modal"
-            data-close="support-modal"
-            type="button"
-        >
-            ×
-        </button>
-
-        <h2>Submit Your Support</h2>
-
-        <p>
-            Thank you for supporting the work of God.
-        </p>
-
-
-        <form id="support-form">
-
-            <div class="form-grid">
-
-                <div>
-
-                    <label>Your Name</label>
-
-                    <input id="giver-name" required>
-
-                </div>
-
-
-                <div>
-
-                    <label>Phone Number</label>
-
-                    <input id="giver-phone" required>
-
-                </div>
-
-            </div>
-
-
-            <label>Amount (UGX)</label>
-
-            <input
-                type="number"
-                id="support-amount"
-                required
-                min="1"
-                placeholder="Enter amount"
-            >
-
-
-            <label>Payment Network</label>
-
-            <select id="support-network">
-
-                <option>MTN Mobile Money</option>
-                <option>Airtel Money</option>
-                <option>Other</option>
-
-            </select>
-
-
-            <label>
-                Upload Proof of Support
-                <span class="optional">(Optional)</span>
-            </label>
-
-            <input
-                type="file"
-                id="support-proof"
-                accept="image/*,.pdf"
-            >
-
-
-            <label>
-                Message / Note
-                <span class="optional">(Optional)</span>
-            </label>
-
-            <textarea
-                id="support-note"
-                rows="3"
-            ></textarea>
-
-
-            <button
-                class="form-btn"
-                type="submit"
-            >
-                Submit Support
-            </button>
-
-
-            <p
-                class="form-message"
-                id="support-message"
-            ></p>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- ================= ADMIN PANEL ================= -->
-
-<div class="admin-panel" id="admin-panel">
-
-
-    <div class="admin-sidebar">
-
-        <div class="admin-brand">
-
-            Seeta Revival
-
-            <br>
-
-            <span>
-                Admin Panel
-            </span>
-
-        </div>
-
-
-        <button
-            class="admin-tab active"
-            data-tab="admin-events"
-        >
-            📅 Events
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-sermons"
-        >
-            🎥 Sermons
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-schedule"
-        >
-            📅 Church Program
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-scripture"
-        >
-            📖 Scripture of the Day
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-contacts"
-        >
-            📞 Contacts
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-support"
-        >
-            ❤️ Giving
-        </button>
-
-
-        <button
-            class="admin-tab"
-            data-tab="admin-submissions"
-        >
-            💰 Support Records
-        </button>
-
-
-        <button
-            class="logout-btn"
-            id="logout-btn"
-        >
-            Logout
-        </button>
-
-    </div>
-
-
-    <div class="admin-main">
-
-        <div class="admin-top">
-
-            <h2>
-                Church Website Management
-            </h2>
-
-            <button
-                class="close-admin"
-                id="close-admin"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <!-- EVENTS -->
-
-        <div
-            class="admin-section active"
-            id="admin-events"
-        >
-
-            <div class="admin-section-head">
-
-                <div>
-
-                    <h3>
-                        Manage Events
-                    </h3>
-
-                    <p>
-                        Add, edit or delete upcoming events.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="add-btn"
-                    id="add-event-btn"
-                >
-                    + Add Event
-                </button>
-
-            </div>
-
-            <div id="admin-events-list"></div>
-
-        </div>
-
-
-        <!-- SERMONS -->
-
-        <div
-            class="admin-section"
-            id="admin-sermons"
-        >
-
-            <div class="admin-section-head">
-
-                <div>
-
-                    <h3>
-                        Manage Sermons
-                    </h3>
-
-                    <p>
-                        Add YouTube, Facebook or other sermon links.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="add-btn"
-                    id="add-sermon-btn"
-                >
-                    + Add Sermon
-                </button>
-
-            </div>
-
-            <div id="admin-sermons-list"></div>
-
-        </div>
-
-
-        <!-- CHURCH PROGRAM -->
-
-        <div
-            class="admin-section"
-            id="admin-schedule"
-        >
-
-            <div class="admin-section-head">
-
-                <div>
-
-                    <h3>
-                        Manage Weekly Church Program
-                    </h3>
-
-                    <p>
-                        Add, edit or remove services and ministry programs.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="add-btn"
-                    id="add-schedule-btn"
-                >
-                    + Add Program
-                </button>
-
-            </div>
-
-            <div id="admin-schedule-list"></div>
-
-        </div>
-
-
-        <!-- SCRIPTURE -->
-
-        <div
-            class="admin-section"
-            id="admin-scripture"
-        >
-
-            <h3>
-                Scripture of the Day
-            </h3>
-
-            <p>
-                Change the scripture displayed on the website.
-            </p>
-
-
-            <form
-                id="scripture-form"
-                class="admin-form"
-            >
-
-                <label>
-                    Scripture Reference
-                </label>
-
-                <input
-                    id="admin-scripture-reference"
-                    required
-                >
-
-
-                <label>
-                    Scripture Text
-                </label>
-
-                <textarea
-                    id="admin-scripture-text"
-                    rows="6"
-                    required
-                ></textarea>
-
-
-                <button
-                    class="form-btn"
-                    type="submit"
-                >
-                    Save Scripture
-                </button>
-
-
-                <p
-                    class="form-message"
-                    id="scripture-message"
-                ></p>
-
-            </form>
-
-        </div>
-
-
-        <!-- CONTACTS -->
-
-        <div
-            class="admin-section"
-            id="admin-contacts"
-        >
-
-            <h3>
-                Church Contacts
-            </h3>
-
-            <p>
-                Change contact information shown on the website.
-            </p>
-
-
-            <form
-                id="contacts-form"
-                class="admin-form"
-            >
-
-                <label>Location</label>
-                <input id="admin-location">
-
-                <label>Email</label>
-                <input id="admin-email">
-
-                <label>Lead Pastor Name</label>
-                <input id="admin-pastor-name">
-
-                <label>Lead Pastor Phone</label>
-                <input id="admin-pastor-phone">
-
-                <label>Second Pastor Name</label>
-                <input id="admin-second-name">
-
-                <label>Second Pastor Phone</label>
-                <input id="admin-second-phone">
-
-                <label>Third Pastor Name</label>
-                <input id="admin-third-name">
-
-                <label>Third Pastor Phone</label>
-                <input id="admin-third-phone">
-
-                <button
-                    class="form-btn"
-                    type="submit"
-                >
-                    Save Contacts
-                </button>
-
-                <p
-                    class="form-message"
-                    id="contacts-message"
-                ></p>
-
-            </form>
-
-        </div>
-
-
-        <!-- GIVING -->
-
-        <div
-            class="admin-section"
-            id="admin-support"
-        >
-
-            <h3>
-                Giving & Support Information
-            </h3>
-
-            <p>
-                Change the mobile money details displayed to visitors.
-            </p>
-
-
-            <form
-                id="giving-form"
-                class="admin-form"
-            >
-
-                <label>Account Name</label>
-                <input id="admin-support-name">
-
-                <label>MTN Number</label>
-                <input id="admin-mtn-number">
-
-                <label>MTN Account Name</label>
-                <input id="admin-mtn-account">
-
-                <label>Airtel Number</label>
-                <input id="admin-airtel-number">
-
-                <label>Airtel Account Name</label>
-                <input id="admin-airtel-account">
-
-                <button
-                    class="form-btn"
-                    type="submit"
-                >
-                    Save Giving Details
-                </button>
-
-                <p
-                    class="form-message"
-                    id="giving-message"
-                ></p>
-
-            </form>
-
-        </div>
-
-
-        <!-- SUPPORT RECORDS -->
-
-        <div
-            class="admin-section"
-            id="admin-submissions"
-        >
-
-            <h3>
-                Support Submissions
-            </h3>
-
-            <p>
-                Review supporters and mark payments as received.
-            </p>
-
-            <div id="support-submissions-list"></div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= EDITOR MODAL ================= -->
-
-<div class="modal" id="editor-modal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-modal"
-            data-close="editor-modal"
-            type="button"
-        >
-            ×
-        </button>
-
-        <h2 id="editor-title">
-            Add Item
-        </h2>
-
-        <form id="editor-form"></form>
-
-    </div>
-
-</div>
-
-
-<script src="script.js"></script>
-
-</body>
-</html>
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    background: #ffffff;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.section-label {
+    color: #9c6b16;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #17233b;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: auto;
+    color: #555;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #17233b;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #9c6b16;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.admin-nav-btn {
+    border: 0;
+    background: #17233b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-nav-btn:hover {
+    background: #9c6b16;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 70px;
+    background:
+        linear-gradient(
+            rgba(10,20,40,.68),
+            rgba(10,20,40,.65)
+        ),
+        url("images/church.jpg") center / cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.welcome {
+    color: #f2c66d;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 68px;
+    line-height: 1.08;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    font-size: 19px;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn,
+.dark-btn,
+.event-btn,
+.contact-button,
+.form-btn,
+.add-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn {
+    background: #f2c66d;
+    color: #17233b;
+}
+
+.dark-btn {
+    background: #17233b;
+    color: white;
+}
+
+.dark-btn:hover,
+.sermon-button:hover {
+    background: #9c6b16;
+}
+
+
+/* =========================
+   SCRIPTURE
+========================= */
+
+.scripture-section {
+    padding: 90px 8%;
+    background: linear-gradient(135deg,#fff8e8,#f7f1e8);
+}
+
+.scripture-card {
+    max-width: 850px;
+    margin: 35px auto 0;
+    padding: 45px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.quote-mark {
+    display: block;
+    font-size: 65px;
+    color: #9c6b16;
+    line-height: .6;
+}
+
+.scripture-card p {
+    font-size: 22px;
+    font-style: italic;
+    color: #17233b;
+    margin: 20px 0;
+}
+
+.scripture-card strong {
+    color: #9c6b16;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about {
+    padding: 110px 8%;
+    background: linear-gradient(135deg,#f7f1e8,#fff);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 48px;
+    color: #17233b;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-box {
+    background: #17233b;
+    color: white;
+    padding: 45px;
+    border-radius: 12px;
+}
+
+.about-box h3 {
+    color: #f2c66d;
+    margin: 20px 0 10px;
+}
+
+.about-box p {
+    color: #d9deea;
+}
+
+.pastor-box {
+    text-align: center;
+}
+
+.pastor-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #f2c66d;
+}
+
+.pastor-title {
+    color: #d9deea;
+}
+
+
+/* =========================
+   MINISTRIES
+========================= */
+
+#ministries {
+    padding: 110px 8%;
+    background: #eaf2f8;
+}
+
+.ministries-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.ministry {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+.ministry:hover {
+    transform: translateY(-8px);
+}
+
+.ministry-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.ministry h3 {
+    color: #17233b;
+    margin-bottom: 12px;
+}
+
+.ministry p {
+    color: #666;
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+#events {
+    padding: 110px 8%;
+    background: linear-gradient(135deg,#fff4d6,#fce3b0);
+}
+
+.events-heading h2 {
+    font-size: 48px;
+    color: #17233b;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    margin-top: 45px;
+}
+
+.event-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+}
+
+.event-date {
+    color: #9c6b16;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-size: 30px;
+    color: #17233b;
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    color: #555;
+}
+
+.event-btn {
+    margin-top: 25px;
+    background: #17233b;
+    color: white;
+}
+
+
+/* =========================
+   CHURCH PROGRAM
+========================= */
+
+#schedule {
+    padding: 110px 8%;
+    background: linear-gradient(135deg,#edf7f0,#dcefe1);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.schedule-card {
+    background: white;
+    padding: 28px;
+    border-radius: 15px;
+    border-top: 4px solid #9c6b16;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+}
+
+.schedule-day {
+    display: inline-block;
+    background: #f7f1e8;
+    color: #9c6b16;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.schedule-card h3 {
+    color: #17233b;
+}
+
+.schedule-time {
+    color: #9c6b16;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+/* =========================
+   SERMONS
+========================= */
+
+#sermons {
+    padding: 110px 8%;
+    background: #f8fafc;
+}
+
+.sermon-box {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.sermon-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #17233b;
+    color: #f2c66d;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.sermon-content h3,
+.sermon-card h3 {
+    color: #17233b;
+}
+
+.sermon-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #17233b;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.sermons-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.sermon-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.watch-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #9c6b16;
+    font-weight: bold;
+}
+
+
+/* =========================
+   WATCH PLATFORMS
+========================= */
+
+.watch-platforms {
+    padding: 110px 8%;
+    background: #eaf2f8;
+}
+
+.platform-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.platform-card {
+    min-height: 340px;
+    padding: 45px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    color: #17233b;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+}
+
+.platform-icon {
+    width: 78px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.youtube-card .platform-icon {
+    background: red;
+}
+
+.facebook-card .platform-icon {
+    background: #1877f2;
+}
+
+.tiktok-card .platform-icon {
+    background: #17233b;
+}
+
+.platform-card h3 {
+    font-size: 27px;
+}
+
+.platform-link {
+    margin-top: auto;
+    padding-top: 25px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    padding: 110px 8%;
+    background: linear-gradient(135deg,#17233b,#293d63);
+    color: white;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-label {
+    color: #f2c66d;
+    font-weight: bold;
+}
+
+.contact-info h2 {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.contact-intro,
+.contact-detail p {
+    color: #d9deea;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-card {
+    background: white;
+    color: #222;
+    padding: 45px;
+    border-radius: 15px;
+}
+
+.contact-card-title {
+    color: #17233b;
+}
+
+.contact-person {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-person strong {
+    display: block;
+    color: #17233b;
+}
+
+.contact-person span {
+    font-size: 13px;
+    color: #777;
+}
+
+.contact-person a {
+    color: #9c6b16;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support-box {
+    margin-top: 35px;
+    padding: 28px;
+    background: #f7f1e8;
+    border-radius: 16px;
+}
+
+.support-top {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.support-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #17233b;
+    border-radius: 50%;
+}
+
+.support-label {
+    color: #9c6b16;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.support-box h3 {
+    color: #17233b;
+}
+
+.support-text {
+    color: #555;
+    margin: 20px 0;
+}
+
+.support-account {
+    background: white;
+    padding: 15px;
+    border-left: 4px solid #9c6b16;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.payment-header {
+    padding: 15px;
+}
+
+.network-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.network-logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.mtn-header {
+    background: #f2c500;
+}
+
+.airtel-header {
+    background: #d71920;
+    color: white;
+}
+
+.payment-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.payment-number {
+    display: block;
+    font-size: 26px;
+    color: #17233b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.account-name {
+    color: #9c6b16;
+    font-weight: bold;
+}
+
+.submit-support-btn {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    background: #17233b;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-support-btn:hover {
+    background: #9c6b16;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0d1525;
+    color: white;
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   MODALS
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(10,20,40,.75);
+    z-index: 3000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+    width: min(650px,100%);
+    max-height: 90vh;
+    overflow: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 16px;
+}
+
+.small-modal {
+    width: min(430px,100%);
+}
+
+.close-modal,
+.close-admin {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+    border: 0;
+    background: transparent;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d7dbe2;
+    border-radius: 7px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: #17233b;
+    color: white;
+}
+
+.form-message {
+    margin-top: 12px;
+    color: #238636;
+    font-weight: bold;
+}
+
+.login-note {
+    margin-top: 15px;
+    background: #f7f1e8;
+    padding: 10px;
+}
+
+
+/* =========================
+   ADMIN PANEL
+========================= */
+
+.admin-panel {
+    position: fixed;
+    inset: 0;
+    display: none;
+    grid-template-columns: 250px 1fr;
+    background: #f4f6fa;
+    z-index: 4000;
+}
+
+.admin-panel.show {
+    display: grid;
+}
+
+.admin-sidebar {
+    background: #17233b;
+    color: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-brand {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.admin-brand span {
+    color: #f2c66d;
+    font-size: 13px;
+}
+
+.admin-tab,
+.logout-btn {
+    background: transparent;
+    color: white;
+    border: 0;
+    text-align: left;
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.admin-tab:hover,
+.admin-tab.active {
+    background: rgba(255,255,255,.12);
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: #9c6b16;
+}
+
+.admin-main {
+    padding: 35px 5%;
+    overflow-y: auto;
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-section-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.add-btn {
+    background: #17233b;
+    color: white;
+}
+
+.admin-item,
+.support-record {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn,
+.delete-btn,
+.received-btn {
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background: #eaf2f8;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b42318;
+}
+
+.received-btn {
+    background: #e1f5e6;
+    color: #1f7a3d;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.received {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.admin-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+}
+
+.empty {
+    padding: 40px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    color: #777;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ministries-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .schedule-grid,
+    .sermons-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .platform-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 130px 7% 80px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .about-text h2,
+    .events-heading h2,
+    .contact-info h2 {
+        font-size: 38px;
+    }
+
+    .ministries-container,
+    .schedule-grid,
+    .sermons-grid,
+    .platform-container,
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .admin-panel.show {
+        display: block;
+    }
+
+    .admin-sidebar {
+        height: 60px;
+        width: 100%;
+        padding: 8px;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .admin-brand {
+        display: none;
+    }
+
+    .admin-tab,
+    .logout-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .admin-main {
+        height: calc(100vh - 60px);
+        padding: 25px 5%;
+    }
+
+    .admin-item {
+        flex-direction: column;
+    }
+
+    .contact-card {
+        padding: 25px 18px;
+    }
+
+}
