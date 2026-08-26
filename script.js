@@ -24,7 +24,7 @@ const defaultData = {
             title: "Messages That Transform Lives",
             description:
                 "Watch powerful teachings and sermons that will strengthen your faith.",
-            link: "#watch-sermon"
+            link: "#watch-sermons"
         }
     ],
 
