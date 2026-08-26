@@ -776,6 +776,7 @@
 
 <!-- ================= LOGIN MODAL ================= -->
 
+
 <div class="modal" id="login-modal">
 
     <div class="modal-box small-modal">
@@ -794,29 +795,36 @@
             Manage the church website.
         </p>
 
-
         <form id="login-form">
 
-            <label>Username</label>
+            <label for="login-username">
+                Username
+            </label>
 
             <input
+                type="text"
                 id="login-username"
                 required
                 placeholder="Enter username"
+                autocomplete="username"
             >
 
-
-            <label>Password</label>
+            <label for="login-password">
+                Password
+            </label>
 
             <input
                 type="password"
                 id="login-password"
                 required
                 placeholder="Enter password"
+                autocomplete="current-password"
             >
 
-
-            <button class="form-btn" type="submit">
+            <button
+                class="form-btn"
+                type="submit"
+            >
                 Login
             </button>
 
@@ -827,11 +835,9 @@
 
         </form>
 
-
     </div>
 
 </div>
-
 
 <!-- ================= SUPPORT MODAL ================= -->
 
